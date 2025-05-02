@@ -28,13 +28,16 @@ This app takes a photo of a clothing item and returns product information using 
 
 ---
 
-## ⚙️ Setup Instructions
-
-### 🔹 Backend (Python + FastAPI)
-
-1. Create a virtual environment:
-
-```bash
-python -m venv venv
-source venv/bin/activate  # Mac/Linux
-venv\Scripts\activate     # Windows
+inditex-visual-search/
+├── backend/                  ← FastAPI backend (Python)
+│   ├── main.py               ← FastAPI app
+│   ├── requirements.txt      ← Python dependencies
+│   └── README.md             ← Backend-specific setup
+│
+├── frontend/                 ← Flutter mobile app (Dart)
+│   ├── lib/
+│   │   └── main.dart         ← Flutter UI + logic
+│   ├── pubspec.yaml          ← Flutter dependencies
+│   └── README.md             ← Frontend-specific setup
+│
+└── README.md                 ← Master README for whole project
