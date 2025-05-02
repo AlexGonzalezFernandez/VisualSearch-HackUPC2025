@@ -1,0 +1,1 @@
+// The main Flutter app file. It handles taking a photo, sending it to the backend, and displaying the result.

@@ -1,0 +1,1 @@
+# The main FastAPI app. Receives images via HTTP POST and sends them to Inditex’s Visual Search API. Returns product info.
