@@ -9,8 +9,6 @@ backend/config/
 
 .idea/
 
-backend/images/*
-
 # Flutter/Dart/Pub related
 .dart_tool/
 .packages
