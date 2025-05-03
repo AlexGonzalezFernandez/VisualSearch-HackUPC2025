@@ -182,11 +182,21 @@ class _ImageScreenState extends State<ImageScreen> {
                   // Obtiene el precio actual
                   var price = item['price']['value']['current'] ?? 0.0;
                   var currency = item['price']['currency'] ?? 'USD';
+                  var originalPrice = item['price']['value']['original'];
 
                   // Si la moneda es EUR, muestra el símbolo €
-                  String priceText = currency == 'EUR' 
-                    ? '$price€' 
-                    : '$price $currency';
+                  String formatPrice(double price) {
+                    return currency == 'EUR' ? '$price€' : '$price $currency';
+                  }
+
+                  String priceText = formatPrice(price);
+                  String originalPriceText = originalPrice != null ? formatPrice(originalPrice) : '';
+
+                  // Calcular porcentaje de descuento
+                  double discountPercentage = 0.0;
+                  if (originalPrice != null && originalPrice > 0) {
+                    discountPercentage = ((originalPrice - price) / originalPrice) * 100;
+                  }
 
                   // URL de ejemplo para el botón "Comprar"
                   String buyLink = item['link']; 
@@ -204,10 +214,43 @@ class _ImageScreenState extends State<ImageScreen> {
                                 fontSize: 18, fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 6),
-                          Text(
-                            'Price: $priceText',
-                            style: const TextStyle(fontSize: 16),
-                          ),
+                          if (originalPrice != null) // Si hay precio original, mostrarlo tachado
+                            Row(
+                              children: [
+                                Text(
+                                originalPriceText,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.red, // Color del texto (precio original)
+                                  decoration: TextDecoration.lineThrough, // Tachado
+                                  decorationColor: Colors.red, // Color del tachado
+                                ),
+                              ),
+
+                                const SizedBox(width: 10),
+                                Text(
+                                  priceText, // Precio actual en negrita
+                                  style: const TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const Spacer(),
+                                Text(
+                                  '-${discountPercentage.toStringAsFixed(0)}%', // Descuento a la derecha
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.green, // Color de descuento
+                                  ),
+                                ),
+                              ],
+                            )
+                          else // Si no hay precio original, solo mostrar el precio actual
+                            Text(
+                              'Price: $priceText',
+                              style: const TextStyle(fontSize: 16),
+                            ),
                           const SizedBox(height: 10),
                           ElevatedButton(
                             onPressed: () {
@@ -226,4 +269,6 @@ class _ImageScreenState extends State<ImageScreen> {
       ),
     );
   }
+
+
 }
