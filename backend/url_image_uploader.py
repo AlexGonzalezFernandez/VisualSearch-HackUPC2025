@@ -10,10 +10,8 @@ class FirebaseStorageManager:
         self.bucket = storage.bucket()
 
     def upload_image(self, image_path):
-        # Generar un nombre único para la imagen
-        image_name = f"images/{uuid.uuid4()}.jpg"
         # Crear una referencia al blob en el bucket
-        blob = self.bucket.blob(image_name)
+        blob = self.bucket.blob(image_path)
         # Subir la imagen al blob
         blob.upload_from_filename(image_path)
         blob.make_public() # Hacer el blob público
