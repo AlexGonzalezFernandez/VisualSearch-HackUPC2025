@@ -47,7 +47,7 @@ class ClothingItemCard extends StatelessWidget {
                   Text(
                     item.price.currentFormatted,
                     style: const TextStyle(
-                      fontSize: 20,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -65,8 +65,11 @@ class ClothingItemCard extends StatelessWidget {
               )
             else
               Text(
-                'Price: ${item.price.currentFormatted}',
-                style: const TextStyle(fontSize: 16),
+                '${item.price.currentFormatted}',
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  ),
               ),
             const SizedBox(height: 10),
             ElevatedButton(
