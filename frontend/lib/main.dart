@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
@@ -74,7 +75,8 @@ class ImageScreen extends StatefulWidget {
 
 class _ImageScreenState extends State<ImageScreen> {
   File? _image;
-  String _result = "";
+  List<dynamic> _results = [];
+  bool _isLoading = false;
   final String backendUrl = 'https://4e55-147-83-201-99.ngrok-free.app';
 
   @override
@@ -89,11 +91,12 @@ class _ImageScreenState extends State<ImageScreen> {
       final imageFile = File(picked.path);
       setState(() {
         _image = imageFile;
-        _result = "Uploading...";
+        _results = [];
+        _isLoading = true;
       });
       await _uploadImage(imageFile);
     } else {
-      Navigator.pop(context); // Go back if no image selected
+      Navigator.pop(context);
     }
   }
 
@@ -115,16 +118,23 @@ class _ImageScreenState extends State<ImageScreen> {
       if (response.statusCode == 200) {
         var respStr = await response.stream.bytesToString();
         setState(() {
-          _result = respStr;
+          _results = json.decode(respStr);
+          _isLoading = false;
         });
       } else {
         setState(() {
-          _result = 'Error: ${response.statusCode}';
+          _results = [
+            {"name": "Error", "value": "Status ${response.statusCode}"}
+          ];
+          _isLoading = false;
         });
       }
     } catch (e) {
       setState(() {
-        _result = 'Upload failed: $e';
+        _results = [
+          {"name": "Error", "value": "Upload failed: $e"}
+        ];
+        _isLoading = false;
       });
     }
   }
@@ -132,7 +142,7 @@ class _ImageScreenState extends State<ImageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Result")),
+      appBar: AppBar(title: const Text("Results")),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -143,24 +153,60 @@ class _ImageScreenState extends State<ImageScreen> {
                 child: Image.file(_image!, height: 250, fit: BoxFit.cover),
               ),
             const SizedBox(height: 20),
-            Text(
-              'Result:',
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(14),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Colors.grey.shade300),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Text(
-                _result.isNotEmpty ? _result : 'No result yet.',
-                style: const TextStyle(fontSize: 14),
-              ),
-            ),
+            if (_isLoading) // Muestra la pantalla de carga
+              Center(
+                child: CircularProgressIndicator(),
+              )
+            else if (_results.isNotEmpty)
+              ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: _results.length,
+                itemBuilder: (context, index) {
+                  final item = _results[index];
+
+                  // Obtiene el precio actual
+                  var price = item['price']['value']['current'] ?? 0.0;
+                  var currency = item['price']['currency'] ?? 'USD';
+
+                  // Si la moneda es EUR, muestra el símbolo €
+                  String priceText = currency == 'EUR' 
+                    ? '$price€' 
+                    : '$price''$currency' ;
+
+                  return Card(
+                    margin: const EdgeInsets.symmetric(vertical: 8),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            item['name'] ?? 'No name',
+                            style: const TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(height: 6),
+                          Text(
+                            'Price: $priceText',
+                            style: const TextStyle(fontSize: 16),
+                          ),
+                          const SizedBox(height: 10),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Puedes añadir lógica aquí para redirigir a una compra o enlace
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text('Comprar ${item['name']}')),
+                              );
+                            },
+                            child: const Text("Comprar"),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              )
           ],
         ),
       ),
