@@ -1,0 +1,2 @@
+/home/alex/VisualSearch-HackUPC2025/frontend/android/app/.cxx/Debug/5ak6l6p4/x86_64/CMakeFiles/edit_cache.dir
+/home/alex/VisualSearch-HackUPC2025/frontend/android/app/.cxx/Debug/5ak6l6p4/x86_64/CMakeFiles/rebuild_cache.dir

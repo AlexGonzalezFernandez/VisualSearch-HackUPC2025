@@ -1,4 +1,9 @@
 fastapi
 uvicorn
 python-multipart
+# cd frontend
+# flutter pub get
 python-keycloak
+firebase-admin
+google-cloud-storage
+requests

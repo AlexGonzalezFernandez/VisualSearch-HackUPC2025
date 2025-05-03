@@ -1,0 +1,1 @@
+/home/alex/VisualSearch-HackUPC2025/frontend/build/app/intermediates/cxx/Debug/6fc535k4/obj/x86
