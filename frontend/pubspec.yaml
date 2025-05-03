@@ -15,4 +15,6 @@ dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/inditex_logo.png
 

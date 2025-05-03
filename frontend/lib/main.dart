@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'views/home_screen.dart';
+import 'views/login_screen.dart'; // Importa LoginScreen
+import 'views/home_screen.dart'; // Importa HomeScreen
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -9,9 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Clothing Scanner',
-      theme: ThemeData(primarySwatch: Colors.indigo),
-      home: const HomeScreen(),
+      debugShowCheckedModeBanner: false,
+      home: const LoginScreen(), // LoginScreen como pantalla inicial
     );
   }
 }
