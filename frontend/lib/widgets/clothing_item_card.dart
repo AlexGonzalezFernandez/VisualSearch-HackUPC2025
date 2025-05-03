@@ -26,6 +26,15 @@ class ClothingItemCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Image.network(
+                item.imageUrl,
+                width: double.infinity,
+                height: 200,
+                fit: BoxFit.scaleDown,
+              ),
+            ),
             Text(
               item.name,
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),

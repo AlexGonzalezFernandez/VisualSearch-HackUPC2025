@@ -37,11 +37,13 @@ class ClothingItem {
   final String name;
   final Price price;
   final String link;
+  final String imageUrl;
 
   ClothingItem({
     required this.name,
     required this.price,
     required this.link,
+    required this.imageUrl,
   });
 
   factory ClothingItem.fromJson(Map<String, dynamic> json) {
@@ -49,6 +51,7 @@ class ClothingItem {
       name: json['name'] ?? 'No name',
       price: Price.fromJson(json['price']),
       link: json['link'] ?? '',
+      imageUrl: json['image_url'] ?? 'Empty image URL',
     );
   }
 }
