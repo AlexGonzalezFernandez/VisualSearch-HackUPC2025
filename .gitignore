@@ -11,3 +11,48 @@ backend/config/
 
 backend/images/*
 frontend/android/local.properties
+
+# Flutter/Dart/Pub related
+.dart_tool/
+.packages
+.pub-cache/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.melos_tool/
+.idea/  # Si usas IntelliJ o Android Studio
+android/.gradle/
+android/app/build/
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/Generated.xcconfig
+macos/Flutter/Flutter.framework
+macos/Flutter/Flutter.podspec
+local.properties
+ephemeral/
+
+# Visual Studio Code
+.vscode/
+
+# Xcode
+ios/Runner.xcworkspace/
+xcuserdata/
+DerivedData/
+*.xcuserstate
+
+# Others
+*.iml
+*.lock
+*.log
+*.tmp
+*.swp
+
+# Obsolete or optional depending on setup
+pubspec.lock  # (sólo en proyectos de librerías; para apps, debe incluirse)
+
+# Web
+web/.dart_tool/
+web/build/

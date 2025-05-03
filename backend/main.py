@@ -2,9 +2,12 @@
 from fastapi import FastAPI, UploadFile, File, Request
 from fastapi.responses import JSONResponse
 import shutil
+import json
+import os
 
 from inditex_api import InditexVisualSearchAPI
 from url_image_uploader import FirebaseStorageManager
+from scrapper2 import InditexScraper, get_scrapper_key
 
 app = FastAPI()
 
@@ -13,6 +16,45 @@ inditex_api = InditexVisualSearchAPI()
 cred_path = 'config/visualsearchhackupc-firebase-adminsdk-fbsvc-9483e6d9c2.json'
 bucket_name = 'visualsearchhackupc.firebasestorage.app'
 uploader = FirebaseStorageManager(cred_path, bucket_name)
+
+def update_scrapping_cache(web_url, image_url):
+    with open('caches/scrapping_cache.json', 'r') as f:
+        cache_scraping = json.load(f)
+    cache_scraping[web_url] = image_url
+    with open('caches/scrapping_cache.json', 'w') as f:
+        json.dump(cache_scraping, f)
+
+def image_scrapped_cached(web_url):
+    # if the cache file does not exist, create one with '[]' as content
+    if not os.path.exists('caches/scrapping_cache.json'):
+        with open('caches/scrapping_cache.json', 'w') as f:
+            f.write('{}')
+    with open('caches/scrapping_cache.json', 'rb') as f:
+        cache_scraping = json.load(f)
+    for web_url_cached, image_url in cache_scraping.items():
+        if web_url_cached == web_url:
+            return image_url
+    return None
+
+def add_image_url(json_response):
+    """
+    Helper function to get the image URL from the JSON response.
+    """
+    for item in json_response:
+        web_url = item['link']
+        cached_image = image_scrapped_cached(web_url)
+        if cached_image:
+            item['image_url'] = cached_image
+            print("Scrapped image from cache")
+        else:
+            scrapper = InditexScraper(api_key=get_scrapper_key())
+            response = scrapper.scrape_image(name=item['name'], link=item['link'])
+            if 'error' in response:
+                raise Exception(response['error'])
+            else:
+                item['image_url'] = response['image_url']
+                update_scrapping_cache(web_url, response['image_url'])
+    return json_response
 
 @app.post("/upload/")
 async def upload_image(file: UploadFile = File(...)):
@@ -26,6 +68,7 @@ async def upload_image(file: UploadFile = File(...)):
 
     image_url = uploader.upload_image(image_path)
     json_response = inditex_api.search_product_by_image_url(image_url)
+    json_response = add_image_url(json_response)
     return JSONResponse(content=json_response)
 
 @app.get("/profile/{user_id}")
