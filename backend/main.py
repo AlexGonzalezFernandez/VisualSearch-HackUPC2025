@@ -2,22 +2,22 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import JSONResponse
 
+from backend.inditex_api import InditexVisualSearchAPI
+
 app = FastAPI()
+
+inditex_api = InditexVisualSearchAPI()
 
 @app.post("/upload/")
 async def upload_image(file: UploadFile = File(...)):
     """
     Endpoint to receive an uploaded image file.
-    Returns mock product information as JSON.
+    Returns products as JSON.
     """
     # (Here you could read/process the image: content = await file.read())
-    dummy_data = {
-        "product_name": "Example Shirt",
-        "price": "29.99",
-        "link": "https://example.com/product/123"
-    }
-    return JSONResponse(content=dummy_data)
-
+    image_url = "https://cdn.pixabay.com/photo/2017/10/29/13/17/jacket-2899729_1280.png"
+    json_response = inditex_api.search_product_by_image_url(image_url)
+    return JSONResponse(content=json_response)
 
 @app.get("/profile/{user_id}")
 async def get_user_profile(user_id: int):
