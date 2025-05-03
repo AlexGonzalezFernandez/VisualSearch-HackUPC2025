@@ -15,7 +15,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
 	File? _image;
 	String _result = "";
-	final String backendUrl = 'http://10.0.2.2:8000';
+	// final String backendUrl = 'http://10.0.2.2:8000';
+	final String backendUrl = 'https://cbd8-147-83-201-99.ngrok-free.app';
 
 	// Function to capture image using camera
 	Future<void> _takePhoto() async {
