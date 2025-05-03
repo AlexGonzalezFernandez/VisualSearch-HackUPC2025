@@ -8,3 +8,5 @@ env/
 backend/config/
 
 .idea/
+
+backend/images/*
