@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'image_screen.dart';
+import 'favorites_screen.dart';
+import '../base_scaffold.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,52 +16,10 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  void _navigateToHome(BuildContext context) {
-    Navigator.popUntil(context, (route) => route.isFirst);
-  }
-
-  void _navigateToFavorites(BuildContext context) {
-    // Aquí podrías implementar navegación a favoritos
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Ir a Favoritos (por implementar)')),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Clothing Scanner'),
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text(
-                'Menú',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-            ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text('Inicio'),
-              onTap: () => _navigateToHome(context),
-            ),
-            ListTile(
-              leading: const Icon(Icons.favorite),
-              title: const Text('Favoritos'),
-              onTap: () => _navigateToFavorites(context),
-            ),
-          ],
-        ),
-      ),
+    return BaseScaffold(
+      title: 'Clothing Scanner',
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
