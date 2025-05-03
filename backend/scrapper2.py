@@ -2,8 +2,15 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
-with open('config/scraper_key.txt', 'r') as file:
-    API_KEY = file.read().strip()
+def get_scrapper_key():
+    """
+    Reads the Scraper API key from a file.
+    """
+    try:
+        with open('config/scraper_key.txt', 'r') as file:
+            return file.read().strip()
+    except FileNotFoundError:
+        raise Exception("Scraper API key file not found. Please create 'config/scraper_key.txt' with your API key.")
 
 class InditexScraper:
     def __init__(self, api_key):
@@ -58,7 +65,7 @@ if __name__ == "__main__":
     json_input = {'name': 'SHORT SLEEVE INTERLOCK T-SHIRT', 'link': 'https://zara.com/es/en/-P04174378.html'}
 
     # Initialize the scraper
-    scraper = InditexScraper(api_key=API_KEY)
+    scraper = InditexScraper(api_key=get_scrapper_key())
 
     # Scrape the image and modified link
     result = scraper.scrape_image(json_input['name'], json_input['link'])
