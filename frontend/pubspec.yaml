@@ -12,7 +12,8 @@ dependencies:
   http: ^0.13.0          # for HTTP requests
   path: ^1.8.0           # optional, for file paths
   url_launcher: ^6.0.10 #
-
+  receive_sharing_intent: ^1.8.1
+  
 flutter:
   uses-material-design: true
 
