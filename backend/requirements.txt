@@ -2,3 +2,5 @@ fastapi
 uvicorn
 python-multipart
 python-keycloak
+firebase-admin
+google-cloud-storage

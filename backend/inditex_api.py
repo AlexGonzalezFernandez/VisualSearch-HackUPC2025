@@ -9,7 +9,7 @@ def request_jwt_token():
     """
     Requests a JWT token from the Inditex API and saves it to a file.
     """
-    with open('config/sandbox_detail.json', 'r') as f:
+    with open('config/promotion_detail.json', 'r') as f:
         data = json.load(f)
 
     token_url = data.get('oauth2_accesstoken_url')
@@ -50,7 +50,7 @@ def get_jwt_token():
 class InditexVisualSearchAPI:
     def __init__(self):
         self.jwt_token = get_jwt_token()
-        self.base_url = "https://api-sandbox.inditex.com/pubvsearch-sandbox"
+        self.base_url = "https://api.inditex.com/pubvsearch"
 
         self.headers = {
             "Authorization": f"Bearer {self.jwt_token}",

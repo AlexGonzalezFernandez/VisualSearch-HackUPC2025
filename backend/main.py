@@ -2,7 +2,8 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import JSONResponse
 
-from backend.inditex_api import InditexVisualSearchAPI
+from inditex_api import InditexVisualSearchAPI
+from url_image_uploader import FirebaseStorageManager
 
 app = FastAPI()
 
@@ -14,8 +15,12 @@ async def upload_image(file: UploadFile = File(...)):
     Endpoint to receive an uploaded image file.
     Returns products as JSON.
     """
-    # (Here you could read/process the image: content = await file.read())
-    image_url = "https://cdn.pixabay.com/photo/2017/10/29/13/17/jacket-2899729_1280.png"
+    cred_path = 'config/visualsearchhackupc-firebase-adminsdk-fbsvc-9483e6d9c2.json'
+    bucket_name = 'visualsearchhackupc.firebasestorage.app'
+    image_path = file.filename
+    uploader = FirebaseStorageManager(cred_path, bucket_name)
+
+    image_url = uploader.upload_image(image_path)
     json_response = inditex_api.search_product_by_image_url(image_url)
     return JSONResponse(content=json_response)
 

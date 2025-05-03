@@ -1,6 +1,6 @@
 import url_image_uploader
 
-cred_path = '../config/visualsearchhackupc-firebase-adminsdk-fbsvc-9483e6d9c2.json'
+cred_path = 'config/visualsearchhackupc-firebase-adminsdk-fbsvc-9483e6d9c2.json'
 bucket_name = 'visualsearchhackupc.firebasestorage.app'  # Corrected bucket name, without gs://
 image_path = 'images/test.jpg'
 
