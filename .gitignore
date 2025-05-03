@@ -6,3 +6,5 @@ config.py
 env/
 
 backend/config/
+
+.idea/
