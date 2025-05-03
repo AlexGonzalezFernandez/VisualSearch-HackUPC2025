@@ -29,7 +29,6 @@ def get_keycloak_tokens(code, realm, client_id, secret, redirect_uri):
     # ID token is also verified in the decode_token method
     id_decoded = keycloak_openid.decode_token(token_data.get("id_token"))
 
-    
     return {
         "access_token": access_token,
         "id_token": id_decoded,

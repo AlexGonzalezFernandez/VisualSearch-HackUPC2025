@@ -6,7 +6,7 @@ import json
 from inditex_api import InditexVisualSearchAPI
 from url_image_uploader import FirebaseStorageManager
 from utils import generate_login_url
-from auth import get_keycloak_tokens
+from auth import get_keycloak_tokens, use_kc_openid
 import secrets
 
 SESSION = {}
@@ -95,13 +95,12 @@ async def login_callback(request: Request):
     id_token = tokens.get('id_token')
     access_token = tokens.get('access_token')
     refresh_token = tokens.get('refresh_token')
-
-    # Store user details in the session
-    request.session["authenticated"] = True
-    request.session["username"] = id_token.get("preferred_username")
-    request.session["id_token"] = id_token
-    request.session["access_token"] = access_token
-    request.session["refresh_token"] = refresh_token
+    if id_token is None or access_token is None:
+        return JSONResponse("Invalid user", status_code=404)
+    
+    SESSION['access_token'] = access_token
+    SESSION['refresh_token'] = refresh_token
+    SESSION['id_token'] = id_token
 
     return JSONResponse("User logged in successfully", status_code=200)
 
@@ -117,7 +116,10 @@ async def register():
 
 @app.get("/home/logout")
 async def logout():
-    """
-    Simple home, shows a welcome, login and register message.
-    """
-    return {"message": "Welcome to the Visual Search API! Please login or register."}
+    """Logs out, clears session and redirects to home."""
+    refresh_token = SESSION.get("refresh_token")
+    SESSION.clear()
+    if refresh_token:
+        kcopenid = use_kc_openid()
+        kcopenid.logout(refresh_token)
+    return JSONResponse(content={"message": "Logged out successfully", "navigate_to": "/home"}, status_code=200)
