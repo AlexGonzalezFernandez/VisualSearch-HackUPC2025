@@ -1,5 +1,5 @@
 # main.py (FastAPI server)
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI, UploadFile, File, Request
 from fastapi.responses import JSONResponse
 
 app = FastAPI()
@@ -29,11 +29,20 @@ async def get_user_profile(user_id: int):
     return {"Hello": "User", "user_id": user_id, "profile": "Mock profile data"}
 
 @app.get("/home")
-async def home():
+async def home(request: Request):
     """
-    Simple home, shows a welcome, login and register message.
+    Simple home, shows a welcome message with login and register links.
     """
-    return {"message": "Welcome to the Visual Search API! Please login or register."}
+    base_url = f"{request.url.scheme}://{request.headers['host']}"
+    return {
+        "message": "Welcome to the Visual Search API!",
+        "actions": {
+            "login": f"{base_url}/home/login",
+            "register": f"{base_url}/home/register"
+        }
+    }
+
+
 @app.get("/home/login")
 async def login():
     """
