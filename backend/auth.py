@@ -1,15 +1,14 @@
-from backend.config import *
 import json
 from keycloak import KeycloakOpenID
 
 # Load Keycloak configuration from JSON file
-with open('config/marc_config.json', 'r') as config_file:
+with open('config/marc_keys.json', 'r') as config_file:
     config = json.load(config_file)
 
-KEYCLOAK_SERVER_URL = config.get("server_url")
-KEYCLOAK_CLIENT_ID = config.get("client_id")
-KEYCLOAK_REALM = config.get("realm_name")
-KEYCLOAK_CLIENT_SECRET = config.get("client_secret")
+KEYCLOAK_SERVER_URL = config.get("KEYCLOAK_SERVER_URL")
+KEYCLOAK_CLIENT_ID = config.get("KEYCLOAK_CLIENT_ID")
+KEYCLOAK_REALM = config.get("KEYCLOAK_REALM")
+KEYCLOAK_CLIENT_SECRET = config.get("KEYCLOAK_CLIENT_SECRET")
 
 def use_kc_openid():
     keycloak_openid = KeycloakOpenID(

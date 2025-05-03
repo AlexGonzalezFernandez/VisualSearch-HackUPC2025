@@ -78,7 +78,8 @@ class _ImageScreenState extends State<ImageScreen> {
   File? _image;
   List<dynamic> _results = [];
   bool _isLoading = false;
-  final String backendUrl = 'https://4e55-147-83-201-99.ngrok-free.app';
+  //final String backendUrl = 'https://4e55-147-83-201-99.ngrok-free.app';
+  final String backendUrl = 'http://10.0.2.2:8000';
 
   @override
   void initState() {
