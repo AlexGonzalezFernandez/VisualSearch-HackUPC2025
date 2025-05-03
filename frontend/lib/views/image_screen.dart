@@ -4,6 +4,8 @@ import 'package:image_picker/image_picker.dart';
 import '../services/clothing_service.dart';
 import '../models/clothing_item.dart';
 import '../widgets/clothing_item_card.dart';
+import '../base_scaffold.dart';
+import 'favorites_screen.dart';
 
 class ImageScreen extends StatefulWidget {
   final ImageSource source;
@@ -58,8 +60,8 @@ class _ImageScreenState extends State<ImageScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Results")),
+    return BaseScaffold(
+      title: "Results",
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),
         child: Column(
