@@ -34,28 +34,28 @@ def update_favorites(user_id, new_favorite):
     else:
         cache_favorites[str(user_id)] = [new_favorite]
     with open('caches/favorites_cache.json', 'w') as f:
-        json.dump(cache_favorites, f)
+        json.dump(cache_favorites, f, indent=4)
 
 def update_scrapping_cache(web_url, image_url):
     with open('caches/scrapping_cache.json', 'r') as f:
         cache_scraping = json.load(f)
     cache_scraping[web_url] = image_url
     with open('caches/scrapping_cache.json', 'w') as f:
-        json.dump(cache_scraping, f)
+        json.dump(cache_scraping, f, indent=4)
 
 def update_firebase_cache(image_path, firebase_url):
     with open('caches/firebase_cache.json', 'r') as f:
         cache_firebase = json.load(f)
     cache_firebase[image_path] = firebase_url
     with open('caches/firebase_cache.json', 'w') as f:
-        json.dump(cache_firebase, f)
+        json.dump(cache_firebase, f, indent=4)
 
 def update_inditex_cache(firebase_url, json_response):
     with open('caches/inditex_cache.json', 'r') as f:
         cache_inditex = json.load(f)
     cache_inditex[firebase_url] = json_response
     with open('caches/inditex_cache.json', 'w') as f:
-        json.dump(cache_inditex, f)
+        json.dump(cache_inditex, f, indent=4)
 
 def image_scrapped_cached(web_url):
     # if the cache file does not exist, create one with '{}' as content
