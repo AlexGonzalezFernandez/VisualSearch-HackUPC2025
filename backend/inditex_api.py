@@ -69,5 +69,15 @@ class InditexVisualSearchAPI:
 
         if response.status_code == 200:
             return response.json()
+        elif response.status_code == 401:
+            os.remove("config/token.json")
+            request_jwt_token()
+            self.headers = {
+                "Authorization": f"Bearer {get_jwt_token()}",
+                "Content-Type": "application/json",
+                "User-Agent": "OpenPlatform/1.0"
+            }
+            response = requests.get(endpoint, headers=self.headers, params=params)
+            return response.json()
         else:
             raise Exception(f"API call failed ({response.status_code}): {response.text}")
