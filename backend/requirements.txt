@@ -7,3 +7,4 @@ python-keycloak
 firebase-admin
 google-cloud-storage
 requests
+bs4
