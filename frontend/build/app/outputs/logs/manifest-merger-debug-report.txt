@@ -1,9 +1,11 @@
 -- Merging decision tree log ---
 application
-INJECTED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:2:5-34:19
+INJECTED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:3:5-35:19
 INJECTED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/debug/AndroidManifest.xml
 MERGED from [:image_picker_android] /home/alex/VisualSearch-HackUPC2025/frontend/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:5-32:19
 MERGED from [:image_picker_android] /home/alex/VisualSearch-HackUPC2025/frontend/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:5-32:19
+MERGED from [:url_launcher_android] /home/alex/VisualSearch-HackUPC2025/frontend/build/url_launcher_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher_android] /home/alex/VisualSearch-HackUPC2025/frontend/build/url_launcher_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:5-12:19
 MERGED from [androidx.window:window:1.2.0] /home/alex/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:22:5-29:19
 MERGED from [androidx.window:window:1.2.0] /home/alex/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:22:5-29:19
 MERGED from [androidx.core:core:1.13.1] /home/alex/.gradle/caches/8.10.2/transforms/8cf478dec41eed746328fa8046755ba2/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
@@ -23,15 +25,17 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/alex/
 	android:name
 		INJECTED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml
 manifest
-ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:1:1-46:12
-MERGED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:1:1-46:12
+ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:1:1-47:12
+MERGED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:1:1-47:12
 INJECTED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 INJECTED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 INJECTED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 MERGED from [:image_picker_android] /home/alex/VisualSearch-HackUPC2025/frontend/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-34:12
 MERGED from [:flutter_plugin_android_lifecycle] /home/alex/VisualSearch-HackUPC2025/frontend/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [:url_launcher_android] /home/alex/VisualSearch-HackUPC2025/frontend/build/url_launcher_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-14:12
 MERGED from [androidx.fragment:fragment:1.7.1] /home/alex/.gradle/caches/8.10.2/transforms/55520e4df2220e27f13f0bbb7467d11a/transformed/fragment-1.7.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.activity:activity:1.9.3] /home/alex/.gradle/caches/8.10.2/transforms/a70ddd560199940b45ffc1a1c4db7f79/transformed/jetified-activity-1.9.3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.browser:browser:1.8.0] /home/alex/.gradle/caches/8.10.2/transforms/308a2e77faa557d0bd706972416bde6a/transformed/browser-1.8.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.window:window:1.2.0] /home/alex/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.window:window-java:1.2.0] /home/alex/.gradle/caches/8.10.2/transforms/c1f85211ae6978d0218d51595a7f7e62/transformed/jetified-window-java-1.2.0/AndroidManifest.xml:17:1-21:12
 MERGED from [androidx.loader:loader:1.0.0] /home/alex/.gradle/caches/8.10.2/transforms/d6334635279cb43af07c2144a95c2be9/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -65,22 +69,24 @@ MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] /home/alex/.gradle/caches/
 		INJECTED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:1:11-69
-queries
-ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:40:5-45:15
-intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
-ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:41:9-44:18
-action#android.intent.action.PROCESS_TEXT
-ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:42:13-72
-	android:name
-		ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:42:21-70
-data
-ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:43:13-50
-	android:mimeType
-		ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:43:19-48
 uses-permission#android.permission.INTERNET
-ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/debug/AndroidManifest.xml:6:5-66
+ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:2:5-66
+MERGED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:2:5-66
+MERGED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:2:5-66
 	android:name
-		ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/debug/AndroidManifest.xml:6:22-64
+		ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:2:22-64
+queries
+ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:41:5-46:15
+intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
+ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:42:9-45:18
+action#android.intent.action.PROCESS_TEXT
+ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:43:13-72
+	android:name
+		ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:43:21-70
+data
+ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:44:13-50
+	android:mimeType
+		ADDED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/AndroidManifest.xml:44:19-48
 uses-sdk
 INJECTED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/debug/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/debug/AndroidManifest.xml
@@ -89,10 +95,14 @@ MERGED from [:image_picker_android] /home/alex/VisualSearch-HackUPC2025/frontend
 MERGED from [:image_picker_android] /home/alex/VisualSearch-HackUPC2025/frontend/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:6:5-44
 MERGED from [:flutter_plugin_android_lifecycle] /home/alex/VisualSearch-HackUPC2025/frontend/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
 MERGED from [:flutter_plugin_android_lifecycle] /home/alex/VisualSearch-HackUPC2025/frontend/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_android] /home/alex/VisualSearch-HackUPC2025/frontend/build/url_launcher_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_android] /home/alex/VisualSearch-HackUPC2025/frontend/build/url_launcher_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.7.1] /home/alex/.gradle/caches/8.10.2/transforms/55520e4df2220e27f13f0bbb7467d11a/transformed/fragment-1.7.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.7.1] /home/alex/.gradle/caches/8.10.2/transforms/55520e4df2220e27f13f0bbb7467d11a/transformed/fragment-1.7.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.activity:activity:1.9.3] /home/alex/.gradle/caches/8.10.2/transforms/a70ddd560199940b45ffc1a1c4db7f79/transformed/jetified-activity-1.9.3/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.9.3] /home/alex/.gradle/caches/8.10.2/transforms/a70ddd560199940b45ffc1a1c4db7f79/transformed/jetified-activity-1.9.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.8.0] /home/alex/.gradle/caches/8.10.2/transforms/308a2e77faa557d0bd706972416bde6a/transformed/browser-1.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.browser:browser:1.8.0] /home/alex/.gradle/caches/8.10.2/transforms/308a2e77faa557d0bd706972416bde6a/transformed/browser-1.8.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.window:window:1.2.0] /home/alex/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.window:window:1.2.0] /home/alex/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.window:window-java:1.2.0] /home/alex/.gradle/caches/8.10.2/transforms/c1f85211ae6978d0218d51595a7f7e62/transformed/jetified-window-java-1.2.0/AndroidManifest.xml:19:5-44
@@ -185,6 +195,14 @@ ADDED from [:image_picker_android] /home/alex/VisualSearch-HackUPC2025/frontend/
 		ADDED from [:image_picker_android] /home/alex/VisualSearch-HackUPC2025/frontend/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:30:17-33
 	android:name
 		ADDED from [:image_picker_android] /home/alex/VisualSearch-HackUPC2025/frontend/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:29:17-63
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher_android] /home/alex/VisualSearch-HackUPC2025/frontend/build/url_launcher_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:9-11:74
+	android:exported
+		ADDED from [:url_launcher_android] /home/alex/VisualSearch-HackUPC2025/frontend/build/url_launcher_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:10:13-37
+	android:theme
+		ADDED from [:url_launcher_android] /home/alex/VisualSearch-HackUPC2025/frontend/build/url_launcher_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:11:13-71
+	android:name
+		ADDED from [:url_launcher_android] /home/alex/VisualSearch-HackUPC2025/frontend/build/url_launcher_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:13-74
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.2.0] /home/alex/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
 	android:required

@@ -1,1 +1,0 @@
- /home/alex/VisualSearch-HackUPC2025/frontend/.dart_tool/flutter_build/d297ae82b925b3e228bea58e56c406df/native_assets.json: 

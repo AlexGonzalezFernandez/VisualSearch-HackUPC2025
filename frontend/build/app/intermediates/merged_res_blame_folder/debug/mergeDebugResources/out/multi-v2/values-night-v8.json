@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.frontend.app-mergeDebugResources-24:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.frontend.app-mergeDebugResources-25:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/home/alex/VisualSearch-HackUPC2025/frontend/android/app/src/main/res/values-night/styles.xml",

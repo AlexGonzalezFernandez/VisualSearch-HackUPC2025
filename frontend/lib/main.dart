@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
+import 'package:url_launcher/url_launcher.dart'; // Importamos url_launcher
 
 void main() => runApp(MyApp());
 
@@ -139,6 +140,19 @@ class _ImageScreenState extends State<ImageScreen> {
     }
   }
 
+  // Función para lanzar la URL
+  Future<void> _launchURL(String url) async {
+    try {
+      // Usamos launch para intentar abrir la URL
+      await launch(url);
+    } catch (e) {
+      // En caso de que haya un error al abrir el URL, mostramos un mensaje
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Error al abrir el enlace: $e")),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -172,7 +186,10 @@ class _ImageScreenState extends State<ImageScreen> {
                   // Si la moneda es EUR, muestra el símbolo €
                   String priceText = currency == 'EUR' 
                     ? '$price€' 
-                    : '$price''$currency' ;
+                    : '$price $currency';
+
+                  // URL de ejemplo para el botón "Comprar"
+                  String buyLink = item['link']; 
 
                   return Card(
                     margin: const EdgeInsets.symmetric(vertical: 8),
@@ -194,10 +211,7 @@ class _ImageScreenState extends State<ImageScreen> {
                           const SizedBox(height: 10),
                           ElevatedButton(
                             onPressed: () {
-                              // Puedes añadir lógica aquí para redirigir a una compra o enlace
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(content: Text('Comprar ${item['name']}')),
-                              );
+                              _launchURL(buyLink); // Llama a la función para abrir la URL
                             },
                             child: const Text("Comprar"),
                           ),

@@ -11,6 +11,7 @@ dependencies:
   image_picker: ^0.8.0   # for camera
   http: ^0.13.0          # for HTTP requests
   path: ^1.8.0           # optional, for file paths
+  url_launcher: ^6.0.10 #
 
 flutter:
   uses-material-design: true
