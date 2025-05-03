@@ -6,18 +6,85 @@ import 'package:http_parser/http_parser.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   @override
-  State<MyApp> createState() => _MyAppState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Clothing Scanner',
+      theme: ThemeData(primarySwatch: Colors.indigo),
+      home: HomeScreen(),
+    );
+  }
 }
 
-class _MyAppState extends State<MyApp> {
+class HomeScreen extends StatelessWidget {
+  void _navigateWithSource(BuildContext context, ImageSource source) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => ImageScreen(source: source),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Clothing Scanner')),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton.icon(
+              icon: const Icon(Icons.camera_alt),
+              label: const Text('Take Photo'),
+              onPressed: () => _navigateWithSource(context, ImageSource.camera),
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 50),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton.icon(
+              icon: const Icon(Icons.image),
+              label: const Text('Choose from Gallery'),
+              onPressed: () => _navigateWithSource(context, ImageSource.gallery),
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 50),
+                backgroundColor: Colors.green,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ImageScreen extends StatefulWidget {
+  final ImageSource source;
+
+  const ImageScreen({super.key, required this.source});
+
+  @override
+  State<ImageScreen> createState() => _ImageScreenState();
+}
+
+class _ImageScreenState extends State<ImageScreen> {
   File? _image;
   String _result = "";
-  final String backendUrl = 'https://cbd8-147-83-201-99.ngrok-free.app';
+  final String backendUrl = 'https://4e55-147-83-201-99.ngrok-free.app';
 
-  Future<void> _pickImage(ImageSource source) async {
-    final picked = await ImagePicker().pickImage(source: source);
+  @override
+  void initState() {
+    super.initState();
+    _pickAndUploadImage();
+  }
+
+  Future<void> _pickAndUploadImage() async {
+    final picked = await ImagePicker().pickImage(source: widget.source);
     if (picked != null) {
       final imageFile = File(picked.path);
       setState(() {
@@ -25,6 +92,8 @@ class _MyAppState extends State<MyApp> {
         _result = "Uploading...";
       });
       await _uploadImage(imageFile);
+    } else {
+      Navigator.pop(context); // Go back if no image selected
     }
   }
 
@@ -62,86 +131,37 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Clothing Scanner',
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-        scaffoldBackgroundColor: Colors.grey[100],
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Clothing Scanner'),
-          centerTitle: true,
-        ),
-        body: SingleChildScrollView(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            children: [
-              const Text(
-                'Snap or upload a clothing item and get matching results!',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-                textAlign: TextAlign.center,
+    return Scaffold(
+      appBar: AppBar(title: const Text("Result")),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            if (_image != null)
+              ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Image.file(_image!, height: 250, fit: BoxFit.cover),
               ),
-              const SizedBox(height: 20),
-              ElevatedButton.icon(
-                icon: const Icon(Icons.camera_alt),
-                label: const Text('Take Photo'),
-                onPressed: () => _pickImage(ImageSource.camera),
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(double.infinity, 50),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                ),
+            const SizedBox(height: 20),
+            Text(
+              'Result:',
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 10),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(color: Colors.grey.shade300),
+                borderRadius: BorderRadius.circular(10),
               ),
-              const SizedBox(height: 10),
-              ElevatedButton.icon(
-                icon: const Icon(Icons.image),
-                label: const Text('Choose from Gallery'),
-                onPressed: () => _pickImage(ImageSource.gallery),
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(double.infinity, 50),
-                  backgroundColor: Colors.green,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                ),
+              child: Text(
+                _result.isNotEmpty ? _result : 'No result yet.',
+                style: const TextStyle(fontSize: 14),
               ),
-              const SizedBox(height: 20),
-              if (_image != null)
-                Card(
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                  elevation: 4,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Image.file(
-                      _image!,
-                      height: 250,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              const SizedBox(height: 20),
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Result:',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-              ),
-              const SizedBox(height: 8),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(color: Colors.grey.shade300),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Text(
-                  _result.isNotEmpty ? _result : 'No result yet.',
-                  style: const TextStyle(fontSize: 14),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
