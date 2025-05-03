@@ -10,3 +10,4 @@ backend/config/
 .idea/
 
 backend/images/*
+frontend/android/local.properties
