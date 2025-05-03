@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'image_screen.dart';
-import 'favorites_screen.dart';
 import '../base_scaffold.dart';
+import 'image_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final String username;
+
+  const HomeScreen({super.key, required this.username});
 
   void _navigateWithSource(BuildContext context, ImageSource source) {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (_) => ImageScreen(source: source),
+        builder: (_) => ImageScreen(source: source, username: username),
       ),
     );
   }
+
 
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
       title: 'Clothing Scanner',
+      username: username,
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(

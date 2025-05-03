@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import '../base_scaffold.dart';
 
 class FavoritesScreen extends StatelessWidget {
-  const FavoritesScreen({super.key});
+  final String username;
+
+  const FavoritesScreen({super.key, required this.username});
 
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
       title: 'Favoritos',
-      body: const Center(
-        child: Text('Aquí se mostrarán tus favoritos.'),
-      ),    
+      username: username, // <-- Esto es lo que faltaba
+      body: const Center(child: Text('Aquí van tus favoritos')),
     );
   }
 }
+
