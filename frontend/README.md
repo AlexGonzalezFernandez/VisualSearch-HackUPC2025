@@ -10,6 +10,11 @@ This is the mobile app built with Flutter that allows users to take a photo of c
    Make sure you have Flutter installed. If not, follow the instructions here:  
    https://docs.flutter.dev/get-started/install
 
+2. **Clean the enviroment**
+   Clean the whole flutter enviroment before going on:
+   ```bash
+   flutter clean
+
 2. **Install Dependencies**  
    Navigate to the `frontend` directory and run the following command to fetch all dependencies:
    ```bash
@@ -20,7 +25,6 @@ This is the mobile app built with Flutter that allows users to take a photo of c
    ```bash
    flutter run
    ```
-
 ---
 ## 📸 Usage Flow
 
