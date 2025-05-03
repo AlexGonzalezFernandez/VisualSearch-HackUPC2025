@@ -41,3 +41,19 @@ inditex-visual-search/
 │   └── README.md             ← Frontend-specific setup
 │
 └── README.md                 ← Master README for whole project
+
+
+## EXECUTION
+
+cd backend/
+uvicorn main:app --host 0.0.0.0 --port 8000
+
+//Otra terminal
+
+studio # alias para el android studio (y abrir el mobil)
+
+//Otra terminal
+
+cd frontend/
+flutter pub get
+flutter run

@@ -1,1 +1,17 @@
-# Flutter’s dependency config. 
+name: frontend
+description: A new Flutter project.
+version: 1.0.0
+
+environment:
+  sdk: '^3.7.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  image_picker: ^0.8.0   # for camera
+  http: ^0.13.0          # for HTTP requests
+  path: ^1.8.0           # optional, for file paths
+
+flutter:
+  uses-material-design: true
+
