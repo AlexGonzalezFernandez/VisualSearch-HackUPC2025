@@ -5,9 +5,10 @@ config.py
 .python-version
 env/
 
-backend/config/
+backend/config*/
 
 .idea/
+url.txt
 
 backend/images/*
 
