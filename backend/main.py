@@ -30,7 +30,8 @@ def update_favorites(user_id, new_favorite):
     with open('caches/favorites_cache.json', 'r') as f:
         cache_favorites = json.load(f)
     if str(user_id) in cache_favorites:
-        cache_favorites[str(user_id)].append(new_favorite)
+        if not new_favorite in cache_favorites[str(user_id)]:
+            cache_favorites[str(user_id)].append(new_favorite)
     else:
         cache_favorites[str(user_id)] = [new_favorite]
     with open('caches/favorites_cache.json', 'w') as f:
@@ -102,20 +103,23 @@ def add_image_url(json_response):
     """
     Helper function to get the image URL from the JSON response.
     """
-    for item in json_response:
+    for i, item in enumerate(json_response):
         web_url = item['link']
         cached_image = image_scrapped_cached(web_url)
         if cached_image:
             item['image_url'] = cached_image
             print("Scrapped image from cache")
         else:
+            print("Getting image URL by scrapping")
             scrapper = InditexScraper(api_key=get_scrapper_key())
             response = scrapper.scrape_image(name=item['name'], link=item['link'])
+            print("Scrapper response:", response)
             if 'error' in response:
                 raise Exception(response['error'])
             else:
                 item['image_url'] = response['image_url']
                 update_scrapping_cache(web_url, response['image_url'])
+        print("Finished", i, "of", len(json_response))
     return json_response
 
 
@@ -126,14 +130,13 @@ def add_image_url(json_response):
 
 # Define the expected structure of the JSON
 class Item(BaseModel):
-    id: str
     name: str
-    price: dict
     link: str
     image_url: str
 
 @app.post("/new-favorite/")
 async def create_item(item: Item):
+    print("Received item:", item)
     # FastAPI automatically parses and validates the JSON body into a Pydantic model
     update_favorites(1, item.image_url)
     return {
@@ -153,7 +156,7 @@ async def get_favorites():
             f.write('{}')
     with open('caches/favorites_cache.json', 'r') as f:
         cache_favorites = json.load(f)
-    return JSONResponse(content=cache_favorites[1])
+    return JSONResponse(content=cache_favorites["1"])
 
 @app.post("/upload/")
 async def upload_image(file: UploadFile = File(...)):
@@ -170,17 +173,21 @@ async def upload_image(file: UploadFile = File(...)):
     if firebase_url:
         print("Firebase URL from cache")
     else:
+        print("Obtaining Firebase URL")
         firebase_url = uploader.upload_image(image_path)
         update_firebase_cache(image_path, firebase_url)
+    print("Firebase URL:", firebase_url)
 
     # firebase url -> json response of inditex api
     json_response = image_inditex_cached(firebase_url)
     if json_response:
         print("Inditex response from cache")
     else:
+        print("Obtaining Inditex response")
         json_response = inditex_api.search_product_by_image_url(firebase_url)
         json_response = add_image_url(json_response)
         update_inditex_cache(firebase_url, json_response)
+    print("Inditex response:", json_response)
 
     # Add image URL to the JSON response
     json_response = add_image_url(json_response)

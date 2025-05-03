@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../models/clothing_item.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import '../services/clothing_service.dart';
 
 class ClothingItemCard extends StatelessWidget {
   final ClothingItem item;
@@ -17,6 +20,41 @@ class ClothingItemCard extends StatelessWidget {
     }
   }
 
+    Future<void> _addToFavorites(BuildContext context) async {
+      final url = Uri.parse('${ClothingService.baseUrl}/new-favorite/'); // Replace with your FastAPI URL
+
+      try {
+        final response = await http.post(
+          url,
+          headers: {'Content-Type': 'application/json'},
+          body: jsonEncode({
+            'name': item.name,
+            'link': item.link,
+            'image_url': item.imageUrl,
+          }),
+        );
+
+        print(url);
+        print(response);
+
+        if (response.statusCode == 200) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text("Añadido a favoritos")),
+          );
+        } else {
+          print(response.body);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text("Error del servidor: ${response.body}")),
+          );
+        }
+      } catch (e) {
+        print(e.toString());
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Error al añadir a favoritos: $e")),
+        );
+      }
+    }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -28,13 +66,22 @@ class ClothingItemCard extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: Image.network(
-                item.imageUrl,
-                width: double.infinity,
-                height: 200,
-                fit: BoxFit.scaleDown,
+              child: AspectRatio(
+                aspectRatio: 1, // or try 4 / 3 for slightly taller images
+                child: Image.network(
+                  item.imageUrl,
+                  height: double.infinity,
+                  fit: BoxFit.cover,
+                  loadingBuilder: (context, child, loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return const Center(child: CircularProgressIndicator());
+                  },
+                  errorBuilder: (context, error, stackTrace) => const Icon(Icons.broken_image),
+                ),
               ),
             ),
+            // Add a small vertical padding
+            const SizedBox(height: 12),
             Text(
               item.name,
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -101,9 +148,7 @@ class ClothingItemCard extends StatelessWidget {
                 const SizedBox(width: 10),
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: () {
-                      // Lógica futura: añadir a favoritos
-                    },
+                    onPressed: () => _addToFavorites(context),
                     style: OutlinedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       shape: RoundedRectangleBorder(
