@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart'; // Importa Google Fonts
 import 'package:image_picker/image_picker.dart';
 import '../base_scaffold.dart';
 import 'image_screen.dart';
@@ -17,38 +18,66 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  ButtonStyle _inditexButtonStyle(Color backgroundColor) {
+    return ElevatedButton.styleFrom(
+      backgroundColor: backgroundColor,
+      padding: const EdgeInsets.symmetric(vertical: 16),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+    ).copyWith(
+      overlayColor: MaterialStateProperty.resolveWith<Color?>(
+        (Set<MaterialState> states) {
+          if (states.contains(MaterialState.hovered)) {
+            return Colors.grey[800]; // Hover gris oscuro
+          }
+          return null; // Por defecto usa el color base
+        },
+      ),
+      foregroundColor: MaterialStateProperty.all<Color>(Colors.white), // Texto siempre blanco
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
-      title: 'Clothing Scanner',
+      title: '',
       username: username,
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton.icon(
-              icon: const Icon(Icons.camera_alt),
-              label: const Text('Take Photo'),
-              onPressed: () => _navigateWithSource(context, ImageSource.camera),
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size(double.infinity, 50),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
+            // Título con fuente fancy
+            Text(
+              'Escanea tu ropa',
+              style: GoogleFonts.playfairDisplay( // Aplica la fuente fancy aquí
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 40),
+            // Botón para tomar una foto
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                icon: const Icon(Icons.camera_alt, color: Colors.white),
+                label: const Text('Tomar foto'),
+                onPressed: () => _navigateWithSource(context, ImageSource.camera),
+                style: _inditexButtonStyle(Colors.black),
               ),
             ),
-            const SizedBox(height: 10),
-            ElevatedButton.icon(
-              icon: const Icon(Icons.image),
-              label: const Text('Choose from Gallery'),
-              onPressed: () =>
-                  _navigateWithSource(context, ImageSource.gallery),
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size(double.infinity, 50),
-                backgroundColor: Colors.green,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
+            const SizedBox(height: 16),
+            // Botón para elegir de la galería
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                icon: const Icon(Icons.image, color: Colors.white),
+                label: const Text('Elegir de galería'),
+                onPressed: () => _navigateWithSource(context, ImageSource.gallery),
+                style: _inditexButtonStyle(Colors.grey[900]!),
               ),
             ),
           ],
