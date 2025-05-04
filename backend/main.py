@@ -154,12 +154,39 @@ def add_image_url(json_response):
             response = scrapper.scrape_image(name=item['name'], link=item['link'])
             print("Scrapper response:", response)
             if 'error' in response:
-                raise Exception(response['error'])
+                print("Error in scrapper response:", response['error'])
+                item['image_url'] = "https://storage.googleapis.com/visualsearchhackupc.firebasestorage.app/images/35.jpg"
             else:
                 item['image_url'] = response['image_url']
                 update_scrapping_cache(web_url, response['image_url'])
-        print("Finished", i, "of", len(json_response))
+        print("Finished", i, "of", len(json_response)-1)
     return json_response
+
+def firebase_url_to_api_response(firebase_url):
+    json_response = image_inditex_cached(firebase_url)
+    if json_response:
+        print("Inditex response from cache")
+    else:
+        print("Obtaining Inditex response")
+        json_response = inditex_api.search_product_by_image_url(firebase_url)
+        json_response = add_image_url(json_response)
+        update_inditex_cache(firebase_url, json_response)
+    print("Inditex response:", json_response)
+    return json_response
+
+def path_to_firebase_url(file):
+    image_path = f"images/{file.filename}"
+    with open(image_path, "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+    firebase_url = image_firebase_cached(image_path)
+    if firebase_url:
+        print("Firebase URL from cache")
+    else:
+        print("Obtaining Firebase URL")
+        firebase_url = uploader.upload_image(image_path)
+        update_firebase_cache(image_path, firebase_url)
+    print("Firebase URL:", firebase_url)
+    return firebase_url
 
 
 #########################################################################################
@@ -240,78 +267,11 @@ async def upload_image(file: UploadFile = File(...)):
     """
 
     # PATH -> firebase url
-    image_path = f"images/{file.filename}"
-    with open(image_path, "wb") as buffer:
-        shutil.copyfileobj(file.file, buffer)
-    firebase_url = image_firebase_cached(image_path)
-    if firebase_url:
-        print("Firebase URL from cache")
-    else:
-        print("Obtaining Firebase URL")
-        firebase_url = uploader.upload_image(image_path)
-        update_firebase_cache(image_path, firebase_url)
-    print("Firebase URL:", firebase_url)
+    firebase_url = path_to_firebase_url(file.filename)
 
     # firebase url -> json response of inditex api
-    json_response = image_inditex_cached(firebase_url)
-    if json_response:
-        print("Inditex response from cache")
-    else:
-        print("Obtaining Inditex response")
-        json_response = inditex_api.search_product_by_image_url(firebase_url)
-        json_response = add_image_url(json_response)
-        update_inditex_cache(firebase_url, json_response)
-    print("Inditex response:", json_response)
+    api_response = firebase_url_to_api_response(firebase_url)
 
     # Add image URL to the JSON response
-    json_response = add_image_url(json_response)
+    json_response = add_image_url(api_response)
     return JSONResponse(content=json_response)
-
-@app.get("/profile/{user_id}")
-async def get_user_profile(user_id: int):
-    """
-    Endpoint to get user profile information from keycloak.
-    Returns mock user profile data as JSON.
-    """
-    # (Here you could fetch user profile data from Keycloak)
-    return {"Hello": "User", "user_id": user_id, "profile": "Mock profile data"}
-
-@app.get("/home")
-async def home(request: Request):
-    """
-    Simple home, shows a welcome message with login and register links.
-    """
-    base_url = f"{request.url.scheme}://{request.headers['host']}"
-    return {
-        "message": "Welcome to the Visual Search API!",
-        "actions": {
-            "login": f"{base_url}/home/login",
-            "register": f"{base_url}/home/register"
-        }
-    }
-
-
-@app.get("/home/login")
-async def login():
-    """
-    Simple home, shows a welcome, login and register message.
-    """
-    return {"message": "Welcome to the Visual Search API! Please login or register."}
-@app.get("/home/register")
-async def register():
-    """
-    Simple home, shows a welcome, login and register message.
-    """
-    return {"message": "Welcome to the Visual Search API! Please login or register."}
-@app.get("/home/login/callback")
-async def login_callback():
-    """
-    Simple home, shows a welcome, login and register message.
-    """
-    return {"message": "Welcome to the Visual Search API! Please login or register."}
-@app.get("/home/logout")
-async def logout():
-    """
-    Simple home, shows a welcome, login and register message.
-    """
-    return {"message": "Welcome to the Visual Search API! Please login or register."}
