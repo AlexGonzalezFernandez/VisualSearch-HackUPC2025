@@ -5,7 +5,6 @@ import '../services/clothing_service.dart';
 import '../models/clothing_item.dart';
 import '../widgets/clothing_item_card.dart';
 import '../base_scaffold.dart';
-import 'favorites_screen.dart';
 
 class ImageScreen extends StatefulWidget {
   final ImageSource source;
@@ -77,9 +76,14 @@ class _ImageScreenState extends State<ImageScreen> {
                 borderRadius: BorderRadius.circular(16),
                 child: Image.file(_image!, height: 250, fit: BoxFit.cover),
               ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 40), // Aumentamos el espacio
             if (_isLoading)
-              const Center(child: CircularProgressIndicator())
+              Center(
+                child: CircularProgressIndicator(
+                  color: Colors.black, // Color más alineado con Inditex
+                  strokeWidth: 6, // Hacemos el círculo un poco más grueso
+                ),
+              )
             else if (_results.isNotEmpty)
               ListView.builder(
                 shrinkWrap: true,

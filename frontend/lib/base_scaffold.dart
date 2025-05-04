@@ -88,7 +88,7 @@ class BaseScaffold extends StatelessWidget {
                         style: TextStyle(color: Colors.white),
                       ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red,
+                        backgroundColor: Colors.grey, // Cambiado a gris
                         padding: const EdgeInsets.symmetric(
                           horizontal: 12,
                           vertical: 8,

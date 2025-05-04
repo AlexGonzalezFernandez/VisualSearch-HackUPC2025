@@ -13,6 +13,7 @@ dependencies:
   path: ^1.8.0           # optional, for file paths
   url_launcher: ^6.0.10 #
   google_fonts: ^4.0.3  # Asegúrate de usar la versión más reciente
+  animated_text_kit: ^4.2.0 # Cambiar a esta línea
 
 flutter:
   uses-material-design: true
