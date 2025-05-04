@@ -49,7 +49,7 @@ VisualSearch-HackUPC2025/
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/AlexGonzalezFernandez/VisualSearch-HackUPC2025.git
-cd VisualSearch-HackUPC2025/backend
+cd VisualSearch-HackUPC2025/
 ```
 The backend and the fronted are separated and they need to be executed at the same time sepratedly.
 You will see further details in the specific README files of the backend and frontend folders.
