@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
       title: 'Clothing Scanner',
       username: username,
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

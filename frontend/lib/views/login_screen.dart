@@ -16,20 +16,12 @@ class _LoginScreenState extends State<LoginScreen> {
     final String username = _usernameController.text;
     final String password = _passwordController.text;
 
-    // Validación simple de campos
     if (username.isNotEmpty && password.isNotEmpty) {
-      // Lógica de inicio de sesión exitoso
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Iniciando sesión...')),
-      );
-
-      // Navegar a la HomeScreen después del login exitoso
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => HomeScreen(username: username)),
      );
     } else {
-      // Mostrar un mensaje de error si los campos están vacíos
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Por favor, ingrese ambos campos.')),
       );
@@ -39,13 +31,16 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Login')),
-      body: Padding(
+      body: SingleChildScrollView( // 🛡 Evita overflow en pantallas pequeñas
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch, // 🧱 Botón ocupa todo el ancho
           children: [
-            Image.asset('assets/images/inditex_logo.png', height: 200), // Asegúrate de tener la imagen del logo
-            const Text('Sign In', style: TextStyle(fontSize: 24)),
+            const SizedBox(height: 40),
+            Image.asset('assets/images/inditex_logo.png', height: 200),
+            const SizedBox(height: 20),
+            const Text('Sign In', style: TextStyle(fontSize: 24), textAlign: TextAlign.center),
+            const SizedBox(height: 20),
             TextField(
               controller: _usernameController,
               decoration: const InputDecoration(labelText: 'Username'),
