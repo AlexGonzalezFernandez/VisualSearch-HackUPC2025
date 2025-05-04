@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart'; // Importa Google Fonts
+import 'package:animated_text_kit/animated_text_kit.dart'; // Importa la librería correcta para animaciones
 import 'home_screen.dart'; // Importa la HomeScreen correcta desde tu archivo.
 
 class LoginScreen extends StatefulWidget {
@@ -21,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => HomeScreen(username: username)),
-     );
+      );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Por favor, ingrese ambos campos.')),
@@ -41,15 +42,23 @@ class _LoginScreenState extends State<LoginScreen> {
             // Logo de Inditex con algo de espacio arriba
             Image.asset('assets/images/inditex_logo.png', height: 200),
             const SizedBox(height: 20),
-            // Título con fuente fancy
-            Text(
-              'Sign In',
-              style: GoogleFonts.playfairDisplay( // Fuente más fancy y elegante
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
+            // Título con fuente fancy y animación
+            Center(
+              child: AnimatedTextKit(
+                animatedTexts: [
+                  TypewriterAnimatedText(
+                    'Welcome', // El texto que va a ser animado
+                    textStyle: GoogleFonts.playfairDisplay( // Fuente más fancy y elegante
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                    speed: const Duration(milliseconds: 300), // Velocidad más lenta
+                  ),
+                ],
+                totalRepeatCount: 1, // Se repite solo una vez
+                pause: const Duration(seconds: 1), // Pausa después de la animación
               ),
-              textAlign: TextAlign.center,
             ),
             const SizedBox(height: 30),
             // Campo de usuario
