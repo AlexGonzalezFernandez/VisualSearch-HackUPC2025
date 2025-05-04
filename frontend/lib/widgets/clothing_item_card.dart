@@ -31,6 +31,13 @@ class ClothingItemCard extends StatelessWidget {
             'name': item.name,
             'link': item.link,
             'image_url': item.imageUrl,
+            'price': {
+              'currency': item.price.currency,
+              'value': {
+                'current': item.price.current,
+                'original': item.price.original,
+              }
+            }
           }),
         );
 

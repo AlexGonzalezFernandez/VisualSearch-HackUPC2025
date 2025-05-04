@@ -142,5 +142,77 @@
             "brand": "zara",
             "image_url": "https://static.zara.net/assets/public/0fd2/64ab/58f5400ea0bd/f9c36c541548/08082001600-p/08082001600-p.jpg?ts=1744210479652&w=710"
         }
+    ],
+    "https://storage.googleapis.com/visualsearchhackupc.firebasestorage.app/images/35.jpg": [
+        {
+            "id": "446120551",
+            "name": "REGULAR FIT T-SHIRT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 12.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P00858182.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/3b47/bbf2/b53344498bf2/30c0ec737704/00858182250-000-p/00858182250-000-p.jpg?ts=1740485208183&w=1066"
+        },
+        {
+            "id": "421606926",
+            "name": "BASIC PLAIN KNIT SHORT SLEEVE TOP",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 19.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P08851001.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/b669/144f/19c740688a57/3cbd3117fb78/08851001300-p/08851001300-p.jpg?ts=1740478466022&w=1118"
+        },
+        {
+            "id": "448101773",
+            "name": "WASHED T-SHIRT WITH SLOGAN",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 8.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P05643333.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/6d78/a02f/3c65444d9936/8f10b5ebbad5/05643333251-p/05643333251-p.jpg?ts=1741796372320&w=710"
+        },
+        {
+            "id": "430665535",
+            "name": "WASHED HEAVY COTTON T-SHIRT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 9.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P03253001.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/5c1f/9e2c/4eef45e5aa68/f6d0845947a4/03253001250-p/03253001250-p.jpg?ts=1742473450152&w=706&f=auto"
+        },
+        {
+            "id": "425882912",
+            "name": "RUSTIC KNIT SWEATER",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 25.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P06771052.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/b6c3/200f/cc0d450baa82/39c7797c0aa2/06771052300-p/06771052300-p.jpg?ts=1740497889186&w=1278"
+        }
     ]
 }

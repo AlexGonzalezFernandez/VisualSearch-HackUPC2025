@@ -1,4 +1,6 @@
 # main.py (FastAPI server)
+from typing import Optional
+
 from fastapi import FastAPI, UploadFile, File, Request
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
@@ -22,20 +24,57 @@ uploader = FirebaseStorageManager(cred_path, bucket_name)
 ########################################################################################
 #  Cache management                                                                    #
 ########################################################################################
-def update_favorites(user_id, new_favorite):
+def add_favorite(image_url, web_url, price, name):
+    print("adding favorite")
     # if the cache file does not exist, create one with '{}' as content
     if not os.path.exists('caches/favorites_cache.json'):
         with open('caches/favorites_cache.json', 'w') as f:
-            f.write('{}')
+            f.write('[]')
     with open('caches/favorites_cache.json', 'r') as f:
         cache_favorites = json.load(f)
-    if str(user_id) in cache_favorites:
-        if not new_favorite in cache_favorites[str(user_id)]:
-            cache_favorites[str(user_id)].append(new_favorite)
-    else:
-        cache_favorites[str(user_id)] = [new_favorite]
+
+    print("Cache before adding favorite", cache_favorites)
+
+    dict_favorite = {
+        "image_url": image_url,
+        "web_url": web_url,
+        "price": price,
+        "name": name
+    }
+    if not dict_favorite in cache_favorites:
+        cache_favorites.append(dict_favorite)
     with open('caches/favorites_cache.json', 'w') as f:
         json.dump(cache_favorites, f, indent=4)
+
+    print("Cache after adding favorite", cache_favorites)
+
+
+def remove_favorite(image_url, web_url, price, name):
+    print("removing favorite")
+    # if the cache file does not exist, create one with '{}' as content
+    with open('caches/favorites_cache.json', 'r') as f:
+        cache_favorites = json.load(f)
+
+    print("Cache before removing favorite", cache_favorites)
+
+    dict_favorite = {
+        "image_url": image_url,
+        "web_url": web_url,
+        "price": price,
+        "name": name
+    }
+    print("dict_favorite", dict_favorite)
+    if dict_favorite in cache_favorites:
+        print("dict_favorite exists")
+    else:
+        print("dict_favorite does not exist")
+    cache_favorites.remove(dict_favorite)
+    with open('caches/favorites_cache.json', 'w') as f:
+        json.dump(cache_favorites, f, indent=4)
+
+    print("Cache after adding favorite", cache_favorites)
+
+
 
 def update_scrapping_cache(web_url, image_url):
     with open('caches/scrapping_cache.json', 'r') as f:
@@ -128,17 +167,49 @@ def add_image_url(json_response):
 #########################################################################################
 
 
-# Define the expected structure of the JSON
+class PriceValue(BaseModel):
+    current: float
+    original: Optional[float] = None
+
+class Price(BaseModel):
+    currency: str
+    value: PriceValue
+
 class Item(BaseModel):
     name: str
     link: str
     image_url: str
+    price: Price
 
 @app.post("/new-favorite/")
 async def create_item(item: Item):
     print("Received item:", item)
     # FastAPI automatically parses and validates the JSON body into a Pydantic model
-    update_favorites(1, item.image_url)
+    price = {
+        "currency": item.price.currency,
+        "value": {
+            "current": item.price.value.current,
+            "original": item.price.value.original
+        }
+    }
+    add_favorite(item.image_url, item.link, price, item.name)
+    return {
+        "message": "Item received successfully",
+        "item": item
+    }
+
+@app.post("/delete-favorite/")
+async def delete_item(item: Item):
+    print("Received item:", item)
+    # FastAPI automatically parses and validates the JSON body into a Pydantic model
+    price = {
+        "currency": item.price.currency,
+        "value": {
+            "current": item.price.value.current,
+            "original": item.price.value.original
+        }
+    }
+    remove_favorite(item.image_url, item.link, price, item.name)
     return {
         "message": "Item received successfully",
         "item": item
@@ -156,7 +227,10 @@ async def get_favorites():
             f.write('{}')
     with open('caches/favorites_cache.json', 'r') as f:
         cache_favorites = json.load(f)
-    return JSONResponse(content=cache_favorites["1"])
+    # Change the key 'web_url' name to 'link' name
+    for i, item in enumerate(cache_favorites):
+        item['link'] = item.pop('web_url')
+    return JSONResponse(content=cache_favorites)
 
 @app.post("/upload/")
 async def upload_image(file: UploadFile = File(...)):
