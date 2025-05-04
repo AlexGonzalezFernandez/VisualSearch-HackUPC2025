@@ -46,11 +46,21 @@ VisualSearch-HackUPC2025/
 
 ## 🛠️ Setup & Execution
 
-### 1. Backend
-Navigate to the `backend` folder and follow the instructions in its [README](backend/README.md).
+### 1. Clone the Repository
+```bash
+git clone https://github.com/AlexGonzalezFernandez/VisualSearch-HackUPC2025.git
+cd VisualSearch-HackUPC2025/backend
+```
+The backend and the fronted are separated and they need to be executed at the same time sepratedly.
+You will see further details in the specific README files of the backend and frontend folders.
 
-### 2. Frontend
+### Backend
+Navigate to the `backend` folder and follow the instructions in its [README](backend/README.md).
+The backend uses python 3.10.13 
+
+### Frontend
 Navigate to the `frontend` folder and follow the instructions in its [README](frontend/README.md).
+The frontend uses flutter
 
 ---
 
