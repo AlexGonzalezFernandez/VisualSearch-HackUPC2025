@@ -54,19 +54,13 @@ Make sure you have the following installed:
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/AlexGonzalezFernandez/VisualSearch-HackUPC2025.git
-cd VisualSearch-HackUPC2025/backend
-```
-
-### 2. Create a Virtual Environment
+### 1. Create a Virtual Environment
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-### 3. Install Dependencies
+### 2. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
@@ -75,17 +69,15 @@ pip install -r requirements.txt
 
 ## 🔧 Configuration
 
-Before running the backend, you need to set up the necessary configuration files:
+Before running the backend, you need to set up the some necessary configurations and obtain api keys for various services:
 
 1. **Firebase Configuration**:
-   - Place the Firebase keys in the `config/` folder.
-   - Update `google-services.json` and the Firebase admin SDK config file with the correct credentials.
+Follow the instructions from https://console.firebase.google.com
+and after it create a new project and add and configure the function Storage
 
-2. **API Keys**:
-   - Ensure that `marc_keys.json` and `token.json` have the correct API keys for interacting with Inditex Tech's visual search API.
-
-3. **Scraper Key**:
-   - The `scraper_key.txt` file is used for web scraping. Make sure it contains the required key from scraper api.
+3. **API Keys**:
+   - Ensure that you have the correct API keys for interacting with Inditex Tech's visual search API https://developer.inditex.com/apimktplc/web/products/pubapimkt/protocols/REST/apis/visual-search/overview.
+   - As well as for the scrapping: https://www.scraperapi.com/ (by creating an account you get a free trial)
 
 ---
 
