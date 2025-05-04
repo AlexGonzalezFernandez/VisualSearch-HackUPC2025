@@ -128,5 +128,77 @@
             "brand": "zara",
             "image_url": "https://static.zara.net/assets/public/a941/b43e/5017405eb5ce/82e75687ebe4/04729737401-e1/04729737401-e1.jpg?ts=1738257147254&w=710"
         }
+    ],
+    "https://storage.googleapis.com/visualsearchhackupc.firebasestorage.app/images/1000025670.jpg": [
+        {
+            "id": "442547943",
+            "name": "POPLIN SHORTS",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 19.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P06929424.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/1ae2/1c4e/e9c142eda19f/5f10c2b5fd24/06929424435-p/06929424435-p.jpg?ts=1744196996727&w=1088"
+        },
+        {
+            "id": "438622293",
+            "name": "ZW COLLECTION MINI SHORTS",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 29.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P09863058.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/4fe5/fbcf/0c994c67a8f9/6ed20045993e/09863058400-p/09863058400-p.jpg?ts=1743076235905&w=710"
+        },
+        {
+            "id": "430643119",
+            "name": "WASHED EFFECT TEXT SWEATSHIRT SHORTS",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 15.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P03253369.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/fe80/14bc/1f3948bcb85c/3dba1d458b50/03253369807-p/03253369807-p.jpg?ts=1744639307424&w=710"
+        },
+        {
+            "id": "452690652",
+            "name": "DARTED BERMUDA SHORTS WITH BELT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 22.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P04387172.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/stdstatic/6.67.0/images/transparent-background.png"
+        },
+        {
+            "id": "419605181",
+            "name": "Z1975 DENIM PLEATED SKORT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 25.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P02154576.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/5a35/4b8e/60b74d789c98/4e59c8fe7cc4/02154576400-p/02154576400-p.jpg?ts=1739459334257&w=700&f=auto"
+        }
     ]
 }

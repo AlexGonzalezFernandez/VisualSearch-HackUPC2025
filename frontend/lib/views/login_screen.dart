@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart'; // Importa Google Fonts
 import 'home_screen.dart'; // Importa la HomeScreen correcta desde tu archivo.
 
 class LoginScreen extends StatefulWidget {
@@ -37,20 +38,60 @@ class _LoginScreenState extends State<LoginScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch, // 🧱 Botón ocupa todo el ancho
           children: [
             const SizedBox(height: 40),
+            // Logo de Inditex con algo de espacio arriba
             Image.asset('assets/images/inditex_logo.png', height: 200),
             const SizedBox(height: 20),
-            const Text('Sign In', style: TextStyle(fontSize: 24), textAlign: TextAlign.center),
-            const SizedBox(height: 20),
+            // Título con fuente fancy
+            Text(
+              'Sign In',
+              style: GoogleFonts.playfairDisplay( // Fuente más fancy y elegante
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 30),
+            // Campo de usuario
             TextField(
               controller: _usernameController,
-              decoration: const InputDecoration(labelText: 'Username'),
+              decoration: InputDecoration(
+                labelText: 'Username',
+                labelStyle: GoogleFonts.montserrat( // Fuente más moderna para el label
+                  fontSize: 16,
+                  color: Colors.black54,
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
             ),
+            const SizedBox(height: 20),
+            // Campo de contraseña
             TextField(
               controller: _passwordController,
               obscureText: true,
-              decoration: const InputDecoration(labelText: 'Password'),
+              decoration: InputDecoration(
+                labelText: 'Password',
+                labelStyle: GoogleFonts.montserrat( // Fuente más moderna para el label
+                  fontSize: 16,
+                  color: Colors.black54,
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
             ),
             const SizedBox(height: 20),
+            // Botón de "Sign In" con estilo Inditex
             ElevatedButton(
               onPressed: _submit,
               style: ElevatedButton.styleFrom(
@@ -58,10 +99,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
+                backgroundColor: Colors.black, // Fondo negro al estilo Inditex
+                foregroundColor: Colors.white, // Texto blanco
               ),
-              child: const Text(
+              child: Text(
                 'Sign In',
-                style: TextStyle(fontSize: 16),
+                style: GoogleFonts.playfairDisplay( // Fuente fancy para el botón
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold, // Más énfasis en el texto
+                ),
               ),
             ),
           ],
