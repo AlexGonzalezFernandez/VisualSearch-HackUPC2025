@@ -1,0 +1,26 @@
+[
+    {
+        "image_url": "https://static.zara.net/assets/public/cbf3/d09f/cdb640b6bdc4/89d4e0290754/03641354250-p/03641354250-p.jpg?ts=1743502343834&w=1066",
+        "web_url": "https://zara.com/es/en/-P03641354.html",
+        "price": {
+            "currency": "EUR",
+            "value": {
+                "current": 7.95,
+                "original": null
+            }
+        },
+        "name": "COTTON MODAL VEST TOP"
+    },
+    {
+        "image_url": "https://static.zara.net/assets/public/1101/8d8f/d497459f90ce/3382bffd1066/04174205712-p/04174205712-p.jpg?ts=1746180888397&w=700&f=auto",
+        "web_url": "https://zara.com/es/en/-P04174205.html",
+        "price": {
+            "currency": "EUR",
+            "value": {
+                "current": 17.95,
+                "original": null
+            }
+        },
+        "name": "CONTRASTING RUFFLE BODYSUIT"
+    }
+]

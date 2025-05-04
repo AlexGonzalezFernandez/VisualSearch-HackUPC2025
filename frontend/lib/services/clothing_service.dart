@@ -5,7 +5,7 @@ import 'dart:convert';
 import '../models/clothing_item.dart';
 
 class ClothingService {
-  static const String baseUrl = 'https://141e-147-83-201-101.ngrok-free.app';
+  static const String baseUrl = 'https://7da0-147-83-201-101.ngrok-free.app';
 
   Future<List<ClothingItem>> uploadImage(File imageFile) async {
     try {

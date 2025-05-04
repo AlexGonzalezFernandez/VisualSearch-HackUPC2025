@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart'; // Importa Google Fonts
+import 'package:google_fonts/google_fonts.dart'; // Import Google Fonts
 import 'package:image_picker/image_picker.dart';
 import '../base_scaffold.dart';
 import 'image_screen.dart';
@@ -29,12 +29,12 @@ class HomeScreen extends StatelessWidget {
       overlayColor: MaterialStateProperty.resolveWith<Color?>(
         (Set<MaterialState> states) {
           if (states.contains(MaterialState.hovered)) {
-            return Colors.grey[800]; // Hover gris oscuro
+            return Colors.grey[800]; // Hover effect for dark grey
           }
-          return null; // Por defecto usa el color base
+          return null; // Default color remains unchanged
         },
       ),
-      foregroundColor: MaterialStateProperty.all<Color>(Colors.white), // Texto siempre blanco
+      foregroundColor: MaterialStateProperty.all<Color>(Colors.white), // Always white text
     );
   }
 
@@ -48,10 +48,10 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Título con fuente fancy
+            // Stylish title with a fancy font
             Text(
               'Scan your outfit',
-              style: GoogleFonts.playfairDisplay( // Aplica la fuente fancy aquí
+              style: GoogleFonts.playfairDisplay( // Applying fancy font here
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
@@ -59,23 +59,37 @@ class HomeScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 40),
-            // Botón para tomar una foto
+            // Button to take a photo
             SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
                 icon: const Icon(Icons.camera_alt, color: Colors.white),
-                label: const Text('Take a photo'),
+                label: Text(
+                  'Take a photo',
+                  style: GoogleFonts.poppins( // Stylish font for the button
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1.2, // Adds a little extra style
+                  ),
+                ),
                 onPressed: () => _navigateWithSource(context, ImageSource.camera),
                 style: _inditexButtonStyle(Colors.black),
               ),
             ),
             const SizedBox(height: 16),
-            // Botón para elegir de la galería
+            // Button to choose from gallery
             SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
                 icon: const Icon(Icons.image, color: Colors.white),
-                label: const Text('Choose from gallery'),
+                label: Text(
+                  'Choose from gallery',
+                  style: GoogleFonts.poppins( // Stylish font for the button
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1.2, // Adds a little extra style
+                  ),
+                ),
                 onPressed: () => _navigateWithSource(context, ImageSource.gallery),
                 style: _inditexButtonStyle(Colors.grey[900]!),
               ),

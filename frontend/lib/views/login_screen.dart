@@ -25,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Por favor, ingrese ambos campos.')),
+        const SnackBar(content: Text('Please enter both fields.')),
       );
     }
   }

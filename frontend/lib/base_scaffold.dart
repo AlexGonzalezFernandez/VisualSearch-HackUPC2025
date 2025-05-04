@@ -111,7 +111,7 @@ class BaseScaffold extends StatelessWidget {
               ListTile(
                 leading: const Icon(Icons.favorite, color: Colors.white),
                 title: Text(
-                  'Favourites',
+                  'Favorites',
                   style: GoogleFonts.playfairDisplay(
                     color: Colors.white,
                   ),

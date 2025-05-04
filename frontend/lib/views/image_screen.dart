@@ -65,8 +65,8 @@ class _ImageScreenState extends State<ImageScreen> {
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
-      title: "Results",
-      username: widget.username, // <-- aquí
+      title: "Results", // "Resultados"
+      username: widget.username, // <-- here
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -76,13 +76,19 @@ class _ImageScreenState extends State<ImageScreen> {
                 borderRadius: BorderRadius.circular(16),
                 child: Image.file(_image!, height: 250, fit: BoxFit.cover),
               ),
-            const SizedBox(height: 40), // Aumentamos el espacio
+            const SizedBox(height: 40), // Increased spacing
             if (_isLoading)
-              Center(
-                child: CircularProgressIndicator(
-                  color: Colors.black, // Color más alineado con Inditex
-                  strokeWidth: 6, // Hacemos el círculo un poco más grueso
-                ),
+              // Move the loading indicator further down
+              Column(
+                children: [
+                  const SizedBox(height: 150), // Add more space before the spinner
+                  Center(
+                    child: CircularProgressIndicator(
+                      color: Colors.black, // Color aligned with Inditex
+                      strokeWidth: 6, // Made the circle a bit thicker
+                    ),
+                  ),
+                ],
               )
             else if (_results.isNotEmpty)
               ListView.builder(
