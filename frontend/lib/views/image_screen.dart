@@ -9,8 +9,13 @@ import 'favorites_screen.dart';
 
 class ImageScreen extends StatefulWidget {
   final ImageSource source;
+  final String username;
 
-  const ImageScreen({super.key, required this.source});
+  const ImageScreen({
+    super.key,
+    required this.source,
+    required this.username,
+  });
 
   @override
   State<ImageScreen> createState() => _ImageScreenState();
@@ -62,6 +67,7 @@ class _ImageScreenState extends State<ImageScreen> {
   Widget build(BuildContext context) {
     return BaseScaffold(
       title: "Results",
+      username: widget.username, // <-- aquí
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),
         child: Column(

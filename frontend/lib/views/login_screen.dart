@@ -26,8 +26,8 @@ class _LoginScreenState extends State<LoginScreen> {
       // Navegar a la HomeScreen después del login exitoso
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()), // Asegúrate de usar la correcta
-      );
+        MaterialPageRoute(builder: (context) => HomeScreen(username: username)),
+     );
     } else {
       // Mostrar un mensaje de error si los campos están vacíos
       ScaffoldMessenger.of(context).showSnackBar(

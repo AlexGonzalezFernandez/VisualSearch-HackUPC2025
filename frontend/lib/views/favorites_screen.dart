@@ -7,7 +7,8 @@ import 'dart:convert';
 import 'package:url_launcher/url_launcher.dart';
 
 class FavoritesScreen extends StatefulWidget {
-  const FavoritesScreen({super.key});
+  final String username;
+  const FavoritesScreen({super.key, required this.username});
 
   @override
   State<FavoritesScreen> createState() => _FavoritesScreenState();
@@ -214,6 +215,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
   Widget build(BuildContext context) {
     return BaseScaffold(
       title: 'Favoritos',
+      username: widget.username,
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _favorites.isEmpty
