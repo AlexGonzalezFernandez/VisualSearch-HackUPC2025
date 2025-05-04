@@ -1,59 +1,65 @@
 # 👗 Inditex Visual Search Hackathon App
 
-This app takes a photo of a clothing item and returns product information using the Inditex Visual Search API.
+This project is a full-stack solution for visual search in fashion, developed for the HackUPC 2025. The app allows users to take a photo of a clothing item and receive product information from Inditex brands like Zara, Pull&Bear, and more.
 
 ---
 
-## 🔧 Tech Stack
+## 📂 Project Structure
 
-### Frontend (Mobile App)
-- **Flutter** (Dart)
-- Packages used:
-  - `image_picker` (capture/select image)
-  - `http` (send image to backend)
-
-### Backend
-- **FastAPI** (Python)
-- Handles image upload and API forwarding to Inditex
+```plaintext
+VisualSearch-HackUPC2025/
+├── backend/                  # FastAPI backend (Python)
+│   ├── main.py               # FastAPI app entry point
+│   ├── requirements.txt      # Python dependencies
+│   └── README.md             # Backend-specific setup
+│
+├── frontend/                 # Flutter mobile app (Dart)
+│   ├── lib/                  # Flutter source code
+│   ├── pubspec.yaml          # Flutter dependencies
+│   └── README.md             # Frontend-specific setup
+│
+└── README.md                 # General project overview (this file)
+```
 
 ---
 
 ## 🚀 How It Works
 
-1. User takes a photo of clothing with the app.
-2. App sends the image to a locally running FastAPI backend.
-3. Backend forwards the image to Inditex's Visual Search API.
-4. Response with product info is sent back to the app.
-5. Product info is shown in the app.
+1. **User Interaction**: The user takes a photo of a clothing item using the Flutter app.
+2. **Backend Processing**: The app sends the image to the FastAPI backend, which forwards it to Inditex's Visual Search API.
+3. **Product Matching**: The backend processes the response and sends product details back to the app.
+4. **Results Display**: The app displays the product name, price, and a link to purchase.
 
 ---
 
-inditex-visual-search/
-├── backend/                  ← FastAPI backend (Python)
-│   ├── main.py               ← FastAPI app
-│   ├── requirements.txt      ← Python dependencies
-│   └── README.md             ← Backend-specific setup
-│
-├── frontend/                 ← Flutter mobile app (Dart)
-│   ├── lib/
-│   │   └── main.dart         ← Flutter UI + logic
-│   ├── pubspec.yaml          ← Flutter dependencies
-│   └── README.md             ← Frontend-specific setup
-│
-└── README.md                 ← Master README for whole project
+## 🔧 Tech Stack
 
+### Frontend
+- **Flutter (Dart)**: Cross-platform mobile app development.
+- **Packages**: `image_picker`, `http`, `url_launcher`.
 
-## EXECUTION
+### Backend
+- **FastAPI (Python)**: High-performance backend framework.
+- **Integrations**: Inditex Visual Search API, Firebase (mocked).
 
-cd backend/
-uvicorn main:app --host 0.0.0.0 --port 8000
+---
 
-//Otra terminal
+## 🛠️ Setup & Execution
 
-studio # alias para el android studio (y abrir el mobil)
+### 1. Backend
+Navigate to the `backend` folder and follow the instructions in its [README](backend/README.md).
 
-//Otra terminal
+### 2. Frontend
+Navigate to the `frontend` folder and follow the instructions in its [README](frontend/README.md).
 
-cd frontend/
-flutter pub get
-flutter run
+---
+
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🌟 Devpost Description
+
+Check out the full project description and demo on [Devpost](https://devpost.com/software/hackchallenge2025).
