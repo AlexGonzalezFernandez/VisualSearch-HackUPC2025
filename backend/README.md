@@ -54,19 +54,13 @@ Make sure you have the following installed:
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/AlexGonzalezFernandez/VisualSearch-HackUPC2025.git
-cd VisualSearch-HackUPC2025/backend
-```
-
-### 2. Create a Virtual Environment
+### 1. Create a Virtual Environment
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-### 3. Install Dependencies
+### 2. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
