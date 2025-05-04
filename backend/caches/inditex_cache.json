@@ -431,5 +431,150 @@
             "brand": "zara",
             "image_url": "https://static.zara.net/assets/public/dc63/d4a0/bc674b319d25/3c34c5457c56/05536553644-e1/05536553644-e1.jpg?ts=1740578137116&w=947"
         }
+    ],
+    "https://storage.googleapis.com/visualsearchhackupc.firebasestorage.app/images/36.jpg": [
+        {
+            "id": "417814864",
+            "name": "FAUX FUR HAT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 22.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P01023021.html",
+            "brand": "zara",
+            "image_url": "https://storage.googleapis.com/visualsearchhackupc.firebasestorage.app/images/35.jpg"
+        },
+        {
+            "id": "413783462",
+            "name": "WOOL BLEND BUCKET HAT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 19.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P03739048.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/38af/9742/be4046ff89c7/f940794431eb/03739048802-p/03739048802-p.jpg?ts=1734944029125&w=632"
+        },
+        {
+            "id": "410580800",
+            "name": "FAUX FUR AVIATOR HAT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 22.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P07282201.html",
+            "brand": "zara",
+            "image_url": "https://storage.googleapis.com/visualsearchhackupc.firebasestorage.app/images/35.jpg"
+        },
+        {
+            "id": "410569839",
+            "name": "ALPACA BEANIE WITH EARMUFFS",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 19.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P03739014.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/8183/801a/c89a4dbf8430/123d9cd562d6/03739014712-p/03739014712-p.jpg?ts=1733401972163&w=1088"
+        },
+        {
+            "id": "417699166",
+            "name": "FABRIC HAIR CLIP WITH FLOWER",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 12.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P00653027.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/02a1/bcd1/e3904a45a6f3/c3dd4bd69021/00653027681-a1/00653027681-a1.jpg?ts=1739531047870&w=710"
+        }
+    ],
+    "https://storage.googleapis.com/visualsearchhackupc.firebasestorage.app/images/37.jpg": [],
+    "https://storage.googleapis.com/visualsearchhackupc.firebasestorage.app/images/38.jpg": [
+        {
+            "id": "445154665",
+            "name": "POPLIN RUFFLE MIDI DRESS",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 35.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P03152374.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/5af1/09e1/89884b7e85d0/a50118676bac/03152374250-p/03152374250-p.jpg?ts=1743680161190&w=947"
+        },
+        {
+            "id": "444345692",
+            "name": "INTERLOCK STRAPPY DRESS",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 19.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P03641317.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/d73f/7b73/0d0d4dcbaa84/96bfec9fecc5/03641317660-p/03641317660-p.jpg?ts=1741170383682&w=1118"
+        },
+        {
+            "id": "439653452",
+            "name": "SHORT DRESS WITH LACE TRIM",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 29.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P03007002.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/6c58/43e7/2db341d3a1a5/550f3c74ac56/03007002250-p/03007002250-p.jpg?ts=1741961759474&w=647&f=auto"
+        },
+        {
+            "id": "442861048",
+            "name": "GODET LACE MINI DRESS",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 22.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P06050338.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/70aa/9a2f/e3eb46049ad8/55d878a52714/06050338250-p/06050338250-p.jpg?ts=1744815726493&w=948"
+        },
+        {
+            "id": "446369151",
+            "name": "SHORT DRESS WITH BOWS",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 29.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P02888777.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/ae3e/9c2c/f2f74ce9a069/80b65f37d873/02888777400-p/02888777400-p.jpg?ts=1741022363574&w=493"
+        }
     ]
 }
