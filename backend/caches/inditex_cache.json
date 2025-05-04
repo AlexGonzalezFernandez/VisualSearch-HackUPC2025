@@ -1,0 +1,435 @@
+{
+    "https://storage.googleapis.com/visualsearchhackupc.firebasestorage.app/images/34.jpg": [
+        {
+            "id": "447116883",
+            "name": "T-SHIRT WITH BACK SEAM",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 8.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P03253321.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/1f6a/f12d/28384b94bb8d/e272b2001d42/03253321250-p/03253321250-p.jpg?ts=1742561205761&w=710"
+        },
+        {
+            "id": "410590517",
+            "name": "SHORT SLEEVE COTTON T-SHIRT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 7.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P04174158.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/64bf/eac0/c214407d9738/62d3cc406f6d/04174158250-p/04174158250-p.jpg?ts=1710496855208&w=710"
+        },
+        {
+            "id": "411119990",
+            "name": "COTTON T-SHIRT WITH ENZYME FINISH",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 8.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P04174751.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/1254/9951/e8934d5a9909/e92bcd6c6710/04424151250-p/04424151250-p.jpg?ts=1744356889293&w=706&f=auto"
+        },
+        {
+            "id": "426592661",
+            "name": "SLUB KNIT COTTON T-SHIRT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 12.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P04174323.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/e095/c0fb/af3741c2a9a7/a0d6b02634a4/04174323800-p/04174323800-p.jpg?ts=1743418040768&w=710"
+        },
+        {
+            "id": "436350350",
+            "name": "POPLIN SHIRT WITH JEWEL COLLAR",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 25.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P08372089.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/3b20/580f/fce94278a735/ce1934e6cfc9/08372089250-p/08372089250-p.jpg?ts=1746178322410&w=892&f=auto"
+        }
+    ],
+    "https://storage.googleapis.com/visualsearchhackupc.firebasestorage.app/images/33.png": [
+        {
+            "id": "431519969",
+            "name": "SLIM FIT T-SHIRT WITH SUPIMA\u00ae COTTON",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 12.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P00264216.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/a53d/9379/09cf44c780c5/9b2c8522d096/00264216600-p/00264216600-p.jpg?ts=1739443078042&w=1066"
+        },
+        {
+            "id": "435310441",
+            "name": "T-SHIRT WITH SLOGAN",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 6.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P04424328.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/a5d6/b9ce/231d4b588b40/463ceb207999/04424328250-p/04424328250-p.jpg?ts=1743769453661&w=1066"
+        },
+        {
+            "id": "427208795",
+            "name": "SLUB KNIT COTTON T-SHIRT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 12.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P00858162.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/8ab2/47f7/e14f45a19949/a32f891cc722/00858162250-p/00858162250-p.jpg?ts=1740130720871&w=632"
+        },
+        {
+            "id": "432764096",
+            "name": "SHORT SLEEVE INTERLOCK SWEATSHIRT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 17.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P03199151.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/0ad1/ee47/fd384879bcd3/676e899972f9/03199151700-p/03199151700-p.jpg?ts=1743168059502&w=710"
+        },
+        {
+            "id": "442846753",
+            "name": "OPEN KNIT CARDIGAN",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 22.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P08082001.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/0fd2/64ab/58f5400ea0bd/f9c36c541548/08082001600-p/08082001600-p.jpg?ts=1744210479652&w=710"
+        }
+    ],
+    "https://storage.googleapis.com/visualsearchhackupc.firebasestorage.app/images/35.jpg": [
+        {
+            "id": "446120551",
+            "name": "REGULAR FIT T-SHIRT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 12.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P00858182.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/3b47/bbf2/b53344498bf2/30c0ec737704/00858182250-000-p/00858182250-000-p.jpg?ts=1740485208183&w=1066"
+        },
+        {
+            "id": "421606926",
+            "name": "BASIC PLAIN KNIT SHORT SLEEVE TOP",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 19.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P08851001.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/b669/144f/19c740688a57/3cbd3117fb78/08851001300-p/08851001300-p.jpg?ts=1740478466022&w=1118"
+        },
+        {
+            "id": "448101773",
+            "name": "WASHED T-SHIRT WITH SLOGAN",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 8.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P05643333.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/6d78/a02f/3c65444d9936/8f10b5ebbad5/05643333251-p/05643333251-p.jpg?ts=1741796372320&w=710"
+        },
+        {
+            "id": "430665535",
+            "name": "WASHED HEAVY COTTON T-SHIRT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 9.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P03253001.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/5c1f/9e2c/4eef45e5aa68/f6d0845947a4/03253001250-p/03253001250-p.jpg?ts=1742473450152&w=706&f=auto"
+        },
+        {
+            "id": "425882912",
+            "name": "RUSTIC KNIT SWEATER",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 25.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P06771052.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/b6c3/200f/cc0d450baa82/39c7797c0aa2/06771052300-p/06771052300-p.jpg?ts=1740497889186&w=1278"
+        }
+    ],
+    "https://storage.googleapis.com/visualsearchhackupc.firebasestorage.app/images/1000025670.jpg": [
+        {
+            "id": "442547943",
+            "name": "POPLIN SHORTS",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 19.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P06929424.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/1ae2/1c4e/e9c142eda19f/5f10c2b5fd24/06929424435-p/06929424435-p.jpg?ts=1744196996727&w=1088"
+        },
+        {
+            "id": "438622293",
+            "name": "ZW COLLECTION MINI SHORTS",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 29.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P09863058.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/4fe5/fbcf/0c994c67a8f9/6ed20045993e/09863058400-p/09863058400-p.jpg?ts=1743076235905&w=710"
+        },
+        {
+            "id": "430643119",
+            "name": "WASHED EFFECT TEXT SWEATSHIRT SHORTS",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 15.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P03253369.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/fe80/14bc/1f3948bcb85c/3dba1d458b50/03253369807-p/03253369807-p.jpg?ts=1744639307424&w=710"
+        },
+        {
+            "id": "452690652",
+            "name": "DARTED BERMUDA SHORTS WITH BELT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 22.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P04387172.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/stdstatic/6.67.0/images/transparent-background.png"
+        },
+        {
+            "id": "419605181",
+            "name": "Z1975 DENIM PLEATED SKORT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 25.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P02154576.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/5a35/4b8e/60b74d789c98/4e59c8fe7cc4/02154576400-p/02154576400-p.jpg?ts=1739459334257&w=700&f=auto"
+        }
+    ],
+    "https://storage.googleapis.com/visualsearchhackupc.firebasestorage.app/images/1000025657.jpg": [
+        {
+            "id": "443570107",
+            "name": "LINEN BLEND T-SHIRT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 17.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P01529003.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/7365/0d59/555f4a77a67f/c713a7c6277a/01529003450-p/01529003450-p.jpg?ts=1744624566238&w=710"
+        },
+        {
+            "id": "442804197",
+            "name": "BUTTONED WAISTCOAT TOP",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 19.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P01165256.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/5f4e/e447/3c6e44f0b04e/4dbfaf6fd1af/01165256081-p/01165256081-p.jpg?ts=1745486467921&w=710"
+        },
+        {
+            "id": "440314868",
+            "name": "CONTRASTING RUFFLE BODYSUIT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 17.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P04174205.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/1101/8d8f/d497459f90ce/3382bffd1066/04174205712-p/04174205712-p.jpg?ts=1746180888397&w=700&f=auto"
+        },
+        {
+            "id": "423198311",
+            "name": "ZW COLLECTION FAUX FUR JACKET",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 89.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P04360246.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/0c5c/2fa6/dfcf4888b072/367397f94c8e/04360246712-p/04360246712-p.jpg?ts=1727774820929&w=842"
+        },
+        {
+            "id": "445903642",
+            "name": "COTTON MODAL VEST TOP",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 7.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P03641354.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/cbf3/d09f/cdb640b6bdc4/89d4e0290754/03641354250-p/03641354250-p.jpg?ts=1743502343834&w=1066"
+        }
+    ],
+    "https://storage.googleapis.com/visualsearchhackupc.firebasestorage.app/images/f54a142b-6744-4937-9345-e3897dcdc6c19010403504330217936.jpg": [],
+    "https://storage.googleapis.com/visualsearchhackupc.firebasestorage.app/images/1b2fe04a-0bc6-4187-8baf-59ddee6bac366278289603778514239.jpg": [
+        {
+            "id": "424943655",
+            "name": "FLORAL DENIM BUCKET HAT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 10.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P00653529.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/61a9/2ebf/92ff48228439/0d3a51532061/00653529400-e1/00653529400-e1.jpg?ts=1744118769732&w=1118"
+        },
+        {
+            "id": "416266961",
+            "name": "HEART PRINT TWILL BUCKET HAT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 12.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P04441456.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/c320/f726/6c9e403ba4f1/4d8365577711/04441456712-e1/04441456712-e1.jpg?ts=1738256332199&w=710"
+        },
+        {
+            "id": "412111248",
+            "name": "CORDUROY CAP WITH PATCH",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 9.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P05213691.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/8ae8/7ed5/47ca4304954f/24448882518d/05213691711-e1/05213691711-e1.jpg?ts=1738257870460&w=1066"
+        },
+        {
+            "id": "416400655",
+            "name": "EMBROIDERED HEART DENIM BUCKET HAT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 10.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P00653534.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/33cf/3cc9/321d48cb9e3f/f41ec8798985/00653534400-e1/00653534400-e1.jpg?ts=1738602134815&w=1088"
+        },
+        {
+            "id": "413352825",
+            "name": "100% CASHMERE BONNET",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 19.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P05536553.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/dc63/d4a0/bc674b319d25/3c34c5457c56/05536553644-e1/05536553644-e1.jpg?ts=1740578137116&w=947"
+        }
+    ]
+}
