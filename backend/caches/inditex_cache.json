@@ -1,0 +1,132 @@
+{
+    "https://storage.googleapis.com/visualsearchhackupc.firebasestorage.app/images/1000025657.jpg": [
+        {
+            "id": "443570107",
+            "name": "LINEN BLEND T-SHIRT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 17.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P01529003.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/7365/0d59/555f4a77a67f/c713a7c6277a/01529003450-p/01529003450-p.jpg?ts=1744624566238&w=710"
+        },
+        {
+            "id": "442804197",
+            "name": "BUTTONED WAISTCOAT TOP",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 19.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P01165256.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/5f4e/e447/3c6e44f0b04e/4dbfaf6fd1af/01165256081-p/01165256081-p.jpg?ts=1745486467921&w=710"
+        },
+        {
+            "id": "440314868",
+            "name": "CONTRASTING RUFFLE BODYSUIT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 17.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P04174205.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/1101/8d8f/d497459f90ce/3382bffd1066/04174205712-p/04174205712-p.jpg?ts=1746180888397&w=700&f=auto"
+        },
+        {
+            "id": "423198311",
+            "name": "ZW COLLECTION FAUX FUR JACKET",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 89.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P04360246.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/0c5c/2fa6/dfcf4888b072/367397f94c8e/04360246712-p/04360246712-p.jpg?ts=1727774820929&w=842"
+        },
+        {
+            "id": "445903642",
+            "name": "COTTON MODAL VEST TOP",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 7.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P03641354.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/cbf3/d09f/cdb640b6bdc4/89d4e0290754/03641354250-p/03641354250-p.jpg?ts=1743502343834&w=1066"
+        }
+    ],
+    "https://storage.googleapis.com/visualsearchhackupc.firebasestorage.app/images/1000025660.jpg": [
+        {
+            "id": "422618838",
+            "name": "ZIP-UP HOODIE WITH LABEL",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 19.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P09805796.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/5376/163c/a3e547279438/676c3a0b42af/09805796400-e1/09805796400-e1.jpg?ts=1742311487065&w=710"
+        },
+        {
+            "id": "423432760",
+            "name": "HOT WHEELS \u2122 MATTEL PATCH SWEATSHIRT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 17.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P05431901.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/38e4/1e31/87b446249f3b/92bade3f00f4/05431901807-e1/05431901807-e1.jpg?ts=1738918139821&w=710"
+        },
+        {
+            "id": "426895037",
+            "name": "PATCH T-SHIRT",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 9.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P05350621.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/0c24/0204/3c134adfbaa9/6dc670c7add7/05350621400-e1/05350621400-e1.jpg?ts=1739889266712&w=710"
+        },
+        {
+            "id": "421211421",
+            "name": "PLUSH HOODIE WITH SLOGAN",
+            "price": {
+                "currency": "EUR",
+                "value": {
+                    "current": 19.95,
+                    "original": null
+                }
+            },
+            "link": "https://zara.com/es/en/-P04729737.html",
+            "brand": "zara",
+            "image_url": "https://static.zara.net/assets/public/a941/b43e/5017405eb5ce/82e75687ebe4/04729737401-e1/04729737401-e1.jpg?ts=1738257147254&w=710"
+        }
+    ]
+}
