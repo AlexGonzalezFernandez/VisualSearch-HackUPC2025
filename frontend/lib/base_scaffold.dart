@@ -72,7 +72,7 @@ class BaseScaffold extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Hola, $username',
+                      'Hello, $username',
                       style: GoogleFonts.playfairDisplay(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -101,7 +101,7 @@ class BaseScaffold extends StatelessWidget {
               ListTile(
                 leading: const Icon(Icons.home, color: Colors.white),
                 title: Text(
-                  'Inicio',
+                  'Home',
                   style: GoogleFonts.playfairDisplay(
                     color: Colors.white,
                   ),
@@ -111,7 +111,7 @@ class BaseScaffold extends StatelessWidget {
               ListTile(
                 leading: const Icon(Icons.favorite, color: Colors.white),
                 title: Text(
-                  'Favoritos',
+                  'Favourites',
                   style: GoogleFonts.playfairDisplay(
                     color: Colors.white,
                   ),

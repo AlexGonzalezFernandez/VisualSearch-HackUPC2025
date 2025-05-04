@@ -1,5 +1,5 @@
-name: frontend
-description: A new Flutter project.
+name: Snap2Shop
+description: Inditex Tech's solution for the future of retail.
 version: 1.0.0
 
 environment:
@@ -19,4 +19,10 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/inditex_logo.png
+    - assets/images/snap2shop_logo.png
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/snap2shop_logo.png"
 

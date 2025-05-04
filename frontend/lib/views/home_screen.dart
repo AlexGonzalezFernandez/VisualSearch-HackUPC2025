@@ -50,7 +50,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             // Título con fuente fancy
             Text(
-              'Escanea tu ropa',
+              'Scan your outfit',
               style: GoogleFonts.playfairDisplay( // Aplica la fuente fancy aquí
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
@@ -64,7 +64,7 @@ class HomeScreen extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton.icon(
                 icon: const Icon(Icons.camera_alt, color: Colors.white),
-                label: const Text('Tomar foto'),
+                label: const Text('Take a photo'),
                 onPressed: () => _navigateWithSource(context, ImageSource.camera),
                 style: _inditexButtonStyle(Colors.black),
               ),
@@ -75,7 +75,7 @@ class HomeScreen extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton.icon(
                 icon: const Icon(Icons.image, color: Colors.white),
-                label: const Text('Elegir de galería'),
+                label: const Text('Choose from gallery'),
                 onPressed: () => _navigateWithSource(context, ImageSource.gallery),
                 style: _inditexButtonStyle(Colors.grey[900]!),
               ),

@@ -93,7 +93,7 @@ class ClothingItemCard extends StatelessWidget {
                       ),
                     ),
                     child: const Text(
-                      "Comprar",
+                      "Buy now",
                       style: TextStyle(fontSize: 16),
                     ),
                   ),
@@ -111,7 +111,7 @@ class ClothingItemCard extends StatelessWidget {
                       ),
                     ),
                     child: const Text(
-                      "Añadir a favoritos",
+                      "Add to favorites",
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16),
                     ),
