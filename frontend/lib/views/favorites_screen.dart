@@ -28,6 +28,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
       final url = Uri.parse('${ClothingService.baseUrl}/favorites/');
       try {
         final response = await http.get(url);
+        print('Respuesta backend: ${response.body}');  // 👈 Añade esto
         if (response.statusCode == 200) {
           List<dynamic> data = jsonDecode(response.body);
           setState(() {

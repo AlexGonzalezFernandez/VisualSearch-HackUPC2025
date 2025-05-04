@@ -122,6 +122,8 @@ class BaseScaffold extends StatelessWidget {
           ),
         ),
       ),
+      body:body,
+      /*
       body: Center( // Centrado del contenido en el cuerpo
         child: SingleChildScrollView( // 🛡 Evita overflow en pantallas pequeñas
           padding: const EdgeInsets.all(16.0),
@@ -134,6 +136,7 @@ class BaseScaffold extends StatelessWidget {
           ),
         ),
       ),
+      */
     );
   }
 }

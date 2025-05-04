@@ -267,7 +267,7 @@ async def upload_image(file: UploadFile = File(...)):
     """
 
     # PATH -> firebase url
-    firebase_url = path_to_firebase_url(file.filename)
+    firebase_url = path_to_firebase_url(file)
 
     # firebase url -> json response of inditex api
     api_response = firebase_url_to_api_response(firebase_url)
